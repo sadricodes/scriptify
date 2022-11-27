@@ -1,3 +1,5 @@
+// SET SOME GLOBALS
+
 console.log(inputCode);
 
 const testData = [
@@ -168,3 +170,11 @@ if (inputCode === "00" || inputCode === "02") {
   console.log("This is a post screen");
   placeInputs();
 }
+
+// SPLIT ITEM OUT OF POST
+const getItem = (postContent, marker) => {
+  start = postContent.indexOf(marker);
+  end = postContent.lastIndexOf(marker);
+  item = postContent.slice(end);
+  return item;
+};
