@@ -164,7 +164,7 @@ const placeInputs = () => {
   destinationDiv.after(wrapper);
 };
 
-if (inputCode === "00" || "02") {
+if (inputCode === "00" || inputCode === "02") {
   console.log("This is a post screen");
   placeInputs();
 }
