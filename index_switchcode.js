@@ -1,3 +1,5 @@
+console.log("workaround functions");
+
 const testData = [
     {
         name: "Adele DeVylissea",
