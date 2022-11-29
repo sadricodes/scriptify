@@ -1,3 +1,7 @@
+console.log("are we loading?");
+
+import { getPosts } from "./post_view_functions.js";
+
 // SET SOME GLOBALS
 
 console.log(inputCode);
@@ -44,19 +48,27 @@ const switchSettings = {
   showInputEntry: true,
 };
 
-const setInfo = () => {
-  const postBox = document.getElementsByTagName("textarea")[0];
-  const postText = postBox.value;
+// BIND DATA BACK TO FORM FIELDS IF WE'RE EDITING
+const bindBackForEdit = () => {
+  const inputs = document.querySelectorAll(".clearableInput");
+};
+
+// CREATE REPLACE STRING CODES
+const makeReplaceString = (key, value) => {
+  return `${key}-${value}-${key}`;
+};
+
+const setInfo = (postBox, inputs) => {
   const dropVal = document.getElementById("dropselect").value;
   let itemString = "";
+  const postText = postBox.value;
 
   // USE INPUTS IF NO SELECTION IN DROPDOWN
   if (!dropVal) {
-    const inputs = document.querySelectorAll(".clearableInput");
     for (const input of inputs) {
       item = input.value;
       code = input.getAttribute("switch-data-code");
-      string = `${code}-${item}-${code}\n`;
+      string = makeReplaceString(item, code);
       itemString += string;
     }
   }
@@ -65,7 +77,7 @@ const setInfo = () => {
   if (dropVal) {
     char = testData.filter((char) => char.shortcode == dropVal)[0];
     for (const [key, value] of Object.entries(char)) {
-      string = `${key}-${value}-${key}\n`;
+      string = makeReplaceString(key, value);
       itemString += string;
     }
     console.log(Object.entries(char));
@@ -74,13 +86,6 @@ const setInfo = () => {
   const replaceString = `${postText} \n[doHTML]<div class="codeHide" switch-data-box="switchItems">${itemString}</div>[/doHTML]`;
   postBox.value = replaceString;
 };
-
-// FIND THE SUBMIT BUTTON AND SEE WHAT HAPPENS
-const submitButton = document.querySelector('[name="submit"]');
-
-submitButton.addEventListener("click", (e) => {
-  setInfo();
-});
 
 // MAKE BOXES FOR INPUTS
 const makeInputBox = (input, menu) => {
@@ -176,16 +181,29 @@ const placeInPostBox = () => {
 
 // CHECK AND APPLY BOXES TO POST BOX IF APPLICABLE
 if (inputCode === "00" || inputCode === "02" || inputCode === "08") {
-  const setInfoElement = placeInPostBox();
+  // FIND THE SUBMIT BUTTON AND SEE WHAT HAPPENS
+  const submitButton = document.querySelector('[name="submit"]');
+
+  // GET THE ELEMENTS WE NEED
+  const postBox = document.getElementsByTagName("textarea")[0];
+  const postText = postBox.value;
+
+  const setInfoElement = placeInPostBox(postBox, postText);
   const destinationDiv = document.getElementById("enter-your-post");
   destinationDiv.after(setInfoElement);
-}
 
-// GET ALL POST ITEMS
-const getPosts = () => {
-  postElements = document.querySelectorAll('[switch-data-item = "post"]');
-  return postElements;
-};
+  const inputs = document.querySelectorAll(".clearableInput");
+
+  submitButton.addEventListener("click", (e) => {
+    setInfo(postBox, inputs);
+  });
+
+  if (inputCode === "08") {
+    bindBackForEdit(inputs, postText);
+
+    console.log(inputs, postText);
+  }
+}
 
 // CHECK IF WE ARE ON A TOPIC VIEW
 if (getPosts().length > 0) {
@@ -240,7 +258,6 @@ const splitItems = (items, postId) => {
 };
 
 // GET POST CONTENT AND SWITCH ITEMS FROM
-
 for (const post of postList.entries()) {
   const postDiv = post[1].querySelector('[switch-data-item="postText"]');
   const postId = post[1].getAttribute("id");
@@ -254,7 +271,7 @@ for (const post of postList.entries()) {
 
       const el = post[1].querySelectorAll(`[switch-data-item="${item.name}"]`);
       console.log(el);
-      for (element of el) {
+      for (const element of el) {
         if (item.type === "text") {
           element.innerText = item.item;
         } else if (item.type === "image") {
