@@ -1,5 +1,3 @@
-import { switchSettings, testData, inputData } from "./globals_switchcode.js";
-
 // SET FUNCTIONS FOR USE IN MULTIPLE SCREENS
 
 // GET START MARKER

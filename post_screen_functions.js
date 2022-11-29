@@ -1,5 +1,4 @@
-import { switchSettings, testData, inputData } from "./globals_switchcode.js";
-import { getItem, splitItems } from "./helper_functions.js";
+import { splitItems } from "./helper_functions.js";
 
 // CREATE REPLACE STRING CODES
 const makeReplaceString = (key, value) => {
@@ -8,8 +7,10 @@ const makeReplaceString = (key, value) => {
 
 // GET CHARACTER ENTRY FROM DROPDOWN
 const getDropCharacterValue = () => {
+  const characterPool = [...npcs, ...switchSettings.customFieldVariable];
+
   const dropVal = document.getElementById("dropselect").value;
-  const char = testData.filter((char) => char.shortcode == dropVal)[0];
+  const char = characterPool.filter((char) => char.shortcode == dropVal)[0];
 
   return char;
 };

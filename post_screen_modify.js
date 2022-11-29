@@ -1,5 +1,8 @@
-import { switchSettings, testData, inputData } from "./globals_switchcode.js";
-import { setTextValsFromSelect } from "./post_screen_functions.js";
+import {
+  setTextValsFromSelect,
+  bindBackForEdit,
+} from "./post_screen_functions.js";
+import { setInfo } from "./post_screen_functions.js";
 
 // CLEAR BUTTON FUNCTION
 const clearAll = () => {
@@ -10,7 +13,7 @@ const clearAll = () => {
 };
 
 // MAKE BOXES FOR INPUTS
-const makeInputBox = (input, menu) => {
+const makeInputBox = (input) => {
   const wrapper = document.createElement("div");
   wrapper.classList.add("pformright");
   wrapper.style.cssText =
@@ -50,6 +53,53 @@ const placeInPostBox = () => {
   inputHeader.setAttribute("colspan", "2");
   inputHeader.innerText = switchSettings.sectionTitle;
 
+  // CHECK NPC PERMISSIONS
+  const checkNpcPerm = (npc) => {
+    if (npc.allowAll) {
+      // exclude members or groups
+      if (npc.overrideMembers.includes(switchSettings.currentUser)) {
+        return false;
+      }
+      if (npc.exceptMembers.includes(switchSettings.currentUser)) {
+        return false;
+      }
+      if (npc.exceptGroups.includes(switchSettings.currentUserGroup)) {
+        return false;
+      }
+      return true;
+    } else if (!npc.allowAll) {
+      // include members or groups
+      if (npc.overrideMembers.includes(switchSettings.currentUser)) {
+        return true;
+      }
+      if (npc.exceptMembers.includes(switchSettings.currentUser)) {
+        return true;
+      }
+      if (npc.exceptGroups.includes(switchSettings.currentUserGroup)) {
+        return true;
+      }
+      return false;
+    }
+  };
+
+  // CREATE OPTION TAGS
+  const makeAppendOption = (chars) => {
+    // DO SOMETHING
+    for (var i = 0; i < chars.length; i++) {
+      if (chars[i].type == "npc") {
+        if (!checkNpcPerm(chars[i])) {
+          continue;
+        }
+      }
+
+      const optionTag = document.createElement("option");
+      optionTag.setAttribute("value", chars[i].shortcode);
+      optionTag.innerText = chars[i].name;
+
+      dropMenu.appendChild(optionTag);
+    }
+  };
+
   // CREATE & APPEND DROPDOWN
   const dropWrap = document.createElement("div");
   dropWrap.classList.add("pformright");
@@ -73,12 +123,21 @@ const placeInPostBox = () => {
     setTextValsFromSelect();
   });
 
-  for (var i = 0; i < testData.length; i++) {
-    const optionTag = document.createElement("option");
-    optionTag.setAttribute("value", testData[i].shortcode);
-    optionTag.innerText = testData[i].name;
+  if (switchSettings.allowUserChars && switchSettings.customFieldVariable) {
+    const yourCharHeader = document.createElement("option");
+    yourCharHeader.innerText = "Select from Your Characters";
+    yourCharHeader.setAttribute("disabled", true);
+    dropMenu.appendChild(yourCharHeader);
+    makeAppendOption(switchSettings.customFieldVariable);
+  }
 
-    dropMenu.appendChild(optionTag);
+  if (switchSettings.npcChars && npcs.length > 0) {
+    const npcHeader = document.createElement("option");
+    npcHeader.innerText = "Select from global NPCS";
+    npcHeader.setAttribute("disabled", true);
+
+    dropMenu.appendChild(npcHeader);
+    makeAppendOption(npcs);
   }
 
   dropWrap.append(dropMenu);
@@ -86,7 +145,7 @@ const placeInPostBox = () => {
 
   // CREATE & APPEND INPUT BOXES
   for (const input of inputData) {
-    const inputElement = makeInputBox(input, dropMenu);
+    const inputElement = makeInputBox(input);
     inputWrapper.appendChild(inputElement);
   }
 
@@ -114,4 +173,28 @@ const placeInPostBox = () => {
   return outerWrapper;
 };
 
-export { makeInputBox, placeInPostBox };
+const setElementsForPostScreen = () => {
+  // FIND THE SUBMIT BUTTON AND SEE WHAT HAPPENS
+  const submitButton = document.querySelector('[name="submit"]');
+
+  // GET THE ELEMENTS WE NEED
+  const postBox = document.getElementsByTagName("textarea")[0];
+  const postText = postBox.value;
+
+  const setInfoElement = placeInPostBox();
+  const destinationDiv = document.getElementById("enter-your-post");
+  destinationDiv.after(setInfoElement);
+
+  const inputs = document.querySelectorAll(".manualInput");
+
+  submitButton.addEventListener("click", (e) => {
+    //e.preventDefault();
+    setInfo(postBox, inputs);
+  });
+
+  if (inputCode === "08") {
+    bindBackForEdit(postText, postBox);
+  }
+};
+
+export { makeInputBox, placeInPostBox, setElementsForPostScreen };

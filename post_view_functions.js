@@ -1,9 +1,7 @@
 import { splitItems } from "./helper_functions.js";
-import { switchSettings, testData, inputData } from "./globals_switchcode.js";
 
 // GET ALL POST ITEMS
 const getPosts = () => {
-  console.log("got to here");
   const postElements = document.querySelectorAll('[switch-data-item = "post"]');
   return postElements;
 };
@@ -27,11 +25,19 @@ const doSwitch = () => {
 
   for (const post of postList.entries()) {
     const postDiv = post[1].querySelector('[switch-data-item="postText"]');
-    const postId = post[1].getAttribute("id");
     const switchItems = getSwitchItemsText(postDiv);
-    const itemsArray = splitItems(switchItems, postId);
+    const itemsArray = splitItems(switchItems);
+
+    // const charObject = eval(
+    //   post[1]
+    //     .querySelector('[switch-data-functional="container"]')
+    //     .getAttribute("switch-data-data")
+    // );
+
+    // console.log(charObject);
 
     if (itemsArray) {
+      console.log(itemsArray);
       itemsArray.itemList.map((item) => {
         if (item != undefined) {
           if (item.item.length > 1) {
