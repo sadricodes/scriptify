@@ -1,0 +1,284 @@
+.testingwrapper {
+  margin: 0 auto;
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.1rem;
+}
+
+#adminConfig {
+  --mainColour: black;
+  --softColour: rgb(184, 181, 181);
+  --textColour: black;
+  --warningColour: #903953;
+  --textContrast: white;
+  --actionColour: #7f4989;
+  --boxItems: #4b7a9a;
+  --boxItemsText: white;
+  --fieldTitleText: rgb(97, 96, 96);
+}
+
+.testingwrapper input,
+.testingwrapper button,
+.testingwrapper select {
+  font-size: 1.1rem;
+}
+
+#adminConfig section {
+  display: flex;
+  flex-wrap: wrap;
+  flex-grow: 1;
+}
+
+#adminConfig input,
+#adminConfig select {
+  padding: 10px;
+  border: 1px solid var(--softColour);
+  border-radius: 5px;
+}
+
+.settingHeader {
+  flex-basis: 100%;
+  padding: 10px;
+  border-bottom: 1px solid var(--softColour);
+  font-size: 1.5rem;
+}
+
+.settingSectionHeader {
+  font-weight: bold;
+  margin: 10px 0;
+  font-size: 1.3rem;
+  flex-basis: 100%;
+  color: var(--actionColour);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--actionColour);
+  padding: 10px;
+}
+
+.settingSectionLine {
+  margin-bottom: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 20px;
+}
+
+.settingSectionLine input {
+  flex-grow: 1;
+  margin-right: 10px;
+}
+
+.groupBoxWrapper {
+  padding: 10px;
+  flex-basis: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.settingSectionBox {
+  flex-basis: 40%;
+  flex-grow: 1;
+  padding: 10px;
+}
+
+.groupBox {
+  padding: 10px 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--softColour);
+  align-self: flex-start;
+  margin-right: 1ch;
+  background: var(--boxItems);
+  color: var(--boxItemsText);
+  border-radius: 5px;
+  border: 0;
+}
+
+.actionButton {
+  background: var(--actionColour);
+  border-radius: 5px;
+  border: 0;
+  padding: 5px 10px;
+  color: var(--boxItemsText);
+}
+
+input.fullwidthinput,
+select.fullwidthinput {
+  margin: 0;
+  margin-top: 10px;
+  flex-basis: 100%;
+}
+
+.fullwidthinput {
+  border: 1px solid var(--softColour);
+  border-radius: 5px;
+}
+
+textarea {
+  flex-basis: 100%;
+  min-height: 300px;
+}
+
+#inputEntryBox .settingSectionLine,
+#npcEntries .settingSectionLine {
+  flex-basis: 100%;
+  padding: 0;
+}
+
+#inputEntryBox .inputBox,
+.npcInputBox {
+  flex-grow: 1;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 20px;
+  gap: 1ch;
+}
+
+.itemLine {
+  flex-basis: 40%;
+  flex-grow: 1;
+  margin-bottom: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: 0;
+}
+
+#inputEntryBox pre {
+  flex-basis: 50%;
+  flex-grow: 1;
+  padding: 10px;
+  border: 1px solid var(--textColour);
+  margin: 0;
+  margin-right: 1ch;
+  border: 2px solid var(--actionColour);
+}
+
+.fieldTitle {
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: var(--fieldTitleText);
+}
+
+#inputEntryBox .outputs {
+  display: flex;
+  flex-basis: 40%;
+  flex-grow: 1;
+  padding: 0 20px;
+}
+
+.buttonRow {
+  display: flex;
+  flex-basis: 100%;
+  padding: 10px;
+  justify-content: center;
+}
+
+.buttonRow button {
+  padding: 10px 20px;
+}
+
+.warningButton {
+  background: var(--warningColour);
+  border: 0;
+  border-radius: 5px;
+  padding: 0 10px;
+  color: var(--boxItemsText);
+}
+
+#npcEntries .itemEx,
+.itemEx {
+  flex-basis: 24%;
+  flex-grow: 1;
+  border: 1px solid var(--softColour);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.itemEx .settingSectionHeader {
+  font-size: 1rem;
+  margin: 0;
+  text-align: center;
+  border-bottom: 1px solid var(--softColour);
+  padding: 5px;
+}
+
+.permPermissive .permissionFalse {
+  display: none;
+}
+
+.permExclusive .permissionTrue {
+  display: none;
+}
+
+.buttonTabLine {
+  flex-basis: 100%;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  gap: 1ch;
+  margin-bottom: 30px;
+}
+
+.buttonTabLine button {
+  padding: 10px 20px;
+}
+
+.activeTab {
+  background: var(--boxItems);
+}
+
+#adminConfig .hideSection,
+.hideNpcDiv {
+  display: none;
+}
+
+#adminConfig .showSection {
+  display: flex;
+  gap: 1ch;
+}
+
+#inputEntryBox .errorState,
+#npcEntries .errorState,
+#basicSettings .errorState {
+  padding: 10px;
+  border: 2px solid red;
+  border-radius: 10px;
+}
+
+.warningBox {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 0.8rem;
+  color: red;
+  margin-top: 5px;
+}
+
+.warningBox.warnSuccess {
+  color: green;
+}
+
+#basicSettings span {
+  flex-grow: 1;
+  flex-basis: 30%;
+}
+
+.sectionRepeater {
+  border: 1px solid var(--softColour);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.settingBox {
+  flex-basis: 10px;
+}
+
+.exBoxWrap {
+  display: flex;
+  gap: 1ch;
+}

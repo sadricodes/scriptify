@@ -1,0 +1,154 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="./jcinkSwitch.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- This is where the configuration code is gonna go -->
+
+    <div class="testingwrapper" id="adminConfig">
+        <h1>Jcink Switch Settings</h1>
+
+        <div class="buttonTabLine">
+            <button class="actionButton activeTab" originTab="basicSettings" onclick="loadSection()">General
+                Settings</button>
+            <button class=" actionButton" originTab="languageData" onclick="loadSection()">Language Settings</button>
+            <button class="actionButton" originTab="inputData" onclick="loadSection()">Input
+                Settings</button>
+            <button class="actionButton" originTab="npcCharsSetUp" onclick="loadSection()">NPC
+                Entries</button>
+            <button class="actionButton" originTab="codeResult" onclick="loadSection()">Generate
+                Code</button>
+        </div>
+        <!-- BASIC SETTINGS CONTAINER-->
+        <section id="basicSettings" class="showSection">
+
+            <!-- MAKE GENERAL SETTINGS -->
+            <div class="settingHeader">General Settings</div>
+            <div class="settingSectionBox">
+                <div class="settingSectionHeader">Switch System Settings</div>
+                <div class="settingSectionOptions">
+                    <div class="settingSectionLine">
+                        <span>User Characters Allowed</span>
+                        <input name="userChars" type="checkbox" id="allowUserChars" onchange="setSetting()"
+                            class="settingBox">
+                    </div>
+                    <div class="settingSectionLine">
+                        <span>NPC Characters Allowed</span>
+                        <input name="npcChars" type="checkbox" id="npcChars" onchange="setSetting()" class="settingBox">
+                    </div>
+                    <div class="settingSectionLine">
+                        <span>Show Post Screen Inputs</span>
+                        <input name="npcChars" type="checkbox" id="showInputEntry" onchange="setSetting()"
+                            class="settingBox">
+                    </div>
+                    <div class="settingSectionLine">
+                        <span>Show User Character Dropdown</span>
+                        <input name="npcChars" type="checkbox" id="showSavedDrop" onchange="setSetting()"
+                            class="settingBox">
+                    </div>
+                </div>
+            </div>
+
+            <!-- MAKE PERMISSIONS ENTRIES -->
+            <div class="settingSectionBox">
+                <div class="settingSectionHeader">Group Permissions</div>
+                <div class="settingSectionOptions">
+                    <div class="settingSectionLine itemEx">
+                        <div class="settingSectionHeader">Member Groups that can use the switch system</div>
+                        <div id="groupsCanUse" class="groupBoxWrapper">No groups enabled yet</div>
+                        <input name="addGroup" type="number" id="groupsCanUseInput"><button class="actionButton"
+                            name="addGroupAllowed" onclick="addToList('groupsCanUseInput', 'groupsCanUse')">Add</button>
+                    </div>
+                    <div class="settingSectionLine itemEx">
+                        <div class="settingSectionHeader">Member Groups that can not use the switch system</div>
+                        <div id="groupsCanNotUse" class="groupBoxWrapper">No groups excluded yet</div>
+                        <input name="addGroup" type="number" id="groupsCanNotUseInput"><button class="actionButton"
+                            name="addGroupAllowed"
+                            onclick="addToList('groupsCanNotUseInput', 'groupsCanNotUse')">Add</button>
+                    </div>
+                </div>
+            </div>
+            <div class="settingSectionBox">
+                <div class="settingSectionHeader">Member Permissions</div>
+                <div class="settingSectionOptions">
+                    <div class="settingSectionLine itemEx">
+                        <div class="settingSectionHeader">Members can use the switch system</div>
+                        <div id="memberCanUse" class="groupBoxWrapper">No members specified yet</div>
+                        <input name="addGroup" type="number" id="memberCanUseInput"><button class="actionButton"
+                            name="addGroupAllowed" onclick="addToList('memberCanUseInput', 'memberCanUse')">Add</button>
+                    </div>
+                    <div class="settingSectionLine itemEx">
+                        <div class="settingSectionHeader">Members can not use the switch system</div>
+                        <div id="memberCanNotUse" class="groupBoxWrapper">No members specified yet</div>
+                        <input name="addGroup" type="number" id="memberCanNotUseInput"><button class="actionButton"
+                            name="addGroupAllowed"
+                            onclick="addToList('memberCanNotUseInput', 'memberCanNotUse')">Add</button>
+                    </div>
+                </div>
+        </section>
+
+        <!-- LANGUAGE SETTINGS CONTAINER-->
+        <section id="languageData" class="hideSection">
+            <div class="settingHeader">Language Settings</div>
+            <div class="settingSectionBox">
+                <div class="settingSectionHeader">Posting Screen Language Items</div>
+                <div class="settingSectionLine sectionRepeater">
+                    <span class="fieldTitle">Section Header in Post Screen</span>
+                    <input type="text" id="sectionTitle" class="switchtextinput fullwidthinput">
+                </div>
+                <div class="settingSectionLine sectionRepeater">
+                    <span class="fieldTitle">Select Saved Character text</span>
+                    <input type="text" id="saveCharacterText" class="switchtextinput fullwidthinput">
+                </div>
+                <div class="settingSectionLine sectionRepeater">
+                    <span class="fieldTitle">Saved Character Default Text</span>
+                    <input type="text" id="savedCharacterDefault" class="switchtextinput fullwidthinput">
+                </div>
+                <div class="settingSectionLine sectionRepeater">
+                    <span class="fieldTitle">Your character select text</span>
+                    <input type="text" id="selectYourCharsText" class="switchtextinput fullwidthinput">
+                </div>
+                <div class="settingSectionLine sectionRepeater">
+                    <span class="fieldTitle">Select from NPCs Text</span>
+                    <input type="text" id="selectNpcCharsText" class="switchtextinput fullwidthinput">
+                </div>
+                <div class="settingSectionLine sectionRepeater">
+                    <span class="fieldTitle">Clear Button Text</span>
+                    <input type="text" id="clearSelectButton" class="switchtextinput fullwidthinput">
+                </div>
+        </section>
+
+        <!-- INPUT DATA SETTINGS CONTAINER -->
+        <section id="inputData" class="hideSection">
+            <div class="settingHeader">Allowed Inputs</div>
+            <div class="settingSectionBox" id="inputEntryBox"></div>
+        </section>
+
+        <!-- NPC CHARACTER INFO SET UP CONTAINER -->
+        <section id="npcCharsSetUp" class="hideSection">
+            <div class="settingHeader">NPC Entries</div>
+            <div class="settingSectionBox" id="npcEntries"></div>
+        </section>
+
+        <!-- CODE RESULT CONTAINER-->
+        <section id="codeResult" class="hideSection">
+            <div class="settingHeader">Generate Setting Code</div>
+            <div class="buttonTabLine"><button onclick="writeCode()" class="actionButton">Generate Code</button>
+                <button onclick="copyCode()" class="actionButton">Copy Code</button>
+            </div>
+            <div id="generateInfo"></div>
+            <textarea id="generatedCode"></textarea>
+        </section>
+
+    </div>
+    <script src="./adminconfig.js"></script>
+    <!-- This is where the configuration code ends -->
+</body>
+
+</html>

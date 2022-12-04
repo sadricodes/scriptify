@@ -125,7 +125,7 @@ const placeInPostBox = () => {
 
   if (switchSettings.allowUserChars && switchSettings.customFieldVariable) {
     const yourCharHeader = document.createElement("option");
-    yourCharHeader.innerText = "Select from Your Characters";
+    yourCharHeader.innerText = switchSettings.selectYourCharsText;
     yourCharHeader.setAttribute("disabled", true);
     dropMenu.appendChild(yourCharHeader);
     makeAppendOption(switchSettings.customFieldVariable);
@@ -133,7 +133,7 @@ const placeInPostBox = () => {
 
   if (switchSettings.npcChars && npcs.length > 0) {
     const npcHeader = document.createElement("option");
-    npcHeader.innerText = "Select from global NPCS";
+    npcHeader.innerText = switchSettings.selectNpcCharsText;
     npcHeader.setAttribute("disabled", true);
 
     dropMenu.appendChild(npcHeader);
@@ -157,7 +157,7 @@ const placeInPostBox = () => {
     "display: flex; flex-wrap: wrap; align-items: center; justify-content: center; padding: 10px;";
   clearButtonWrap.setAttribute("colspan", "2");
   const clearButton = document.createElement("button");
-  clearButton.innerText = "Clear Selections";
+  clearButton.innerText = switchSettings.clearSelectButton;
   clearButton.classList.add("forminput");
   clearButton.addEventListener("click", (e) => {
     e.preventDefault();
