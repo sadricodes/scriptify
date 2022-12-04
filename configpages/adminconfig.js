@@ -304,11 +304,9 @@ const copyCode = () => {
   const errorbox = document.getElementById("generateInfo");
 
   if (code.length > 0) {
-    console.log("go ahead and copy!");
     const copyContent = async () => {
       try {
         await navigator.clipboard.writeText(code);
-        console.log("Content copied to clipboard");
         const info = document.createElement("span");
         info.innerText = "Successfully Copied to Clip Board!";
         info.classList.add("warningBox", "warnSuccess");
@@ -322,7 +320,7 @@ const copyCode = () => {
     };
     copyContent();
   } else {
-    console.log("oops, nothing to copy");
+    // do nothing
   }
 };
 
@@ -903,7 +901,9 @@ const writeCode = () => {
   const settingsCode = JSON.stringify(baseSettings, null, " ");
   const inputCode = JSON.stringify(inputData, null, " ");
   const npcCode = JSON.stringify(npcs, null, " ");
+  const codeWrap = document.createElement("script");
   const code = `const switchSettings = ${settingsCode} \n \n let inputData = ${inputCode} \n\n let npcs = ${npcCode}`;
+  codeWrap.innerText = code;
   destination.value = code;
 };
 
