@@ -123,12 +123,12 @@ const placeInPostBox = () => {
     setTextValsFromSelect();
   });
 
-  if (switchSettings.allowUserChars && switchSettings.customFieldVariable) {
+  if (switchSettings.allowUserChars && switchSettings.memberData) {
     const yourCharHeader = document.createElement("option");
     yourCharHeader.innerText = switchSettings.selectYourCharsText;
     yourCharHeader.setAttribute("disabled", true);
     dropMenu.appendChild(yourCharHeader);
-    makeAppendOption(switchSettings.customFieldVariable);
+    makeAppendOption(switchSettings.memberData);
   }
 
   if (switchSettings.npcChars && npcs.length > 0) {

@@ -1,3 +1,5 @@
-import { testCode } from "./modules/wrapperswitch/index_switchcode.js";
+import { runScript } from "./global_scripts/runPageItems.js";
 
-testCode();
+runScript();
+
+console.log(switchSettings);

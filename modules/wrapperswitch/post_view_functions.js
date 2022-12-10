@@ -37,7 +37,6 @@ const doSwitch = () => {
     // console.log(charObject);
 
     if (itemsArray) {
-      console.log(itemsArray);
       itemsArray.itemList.map((item) => {
         if (item != undefined) {
           if (item.item.length > 1) {

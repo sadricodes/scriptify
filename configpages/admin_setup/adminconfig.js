@@ -12,9 +12,9 @@ const switchSettings = {
   clearSelectButton: "Clear Selections",
   showSavedDrop: true,
   showInputEntry: true,
-  //   customFieldVariable: <!-- |field_114| -->,
-  //   currentUser: <!-- |id| -->,
-  //   currentUserGroup: <!-- |g_id| -->,
+  customFieldVariable: 114,
+  currentUserVariable: `<!-- |id| -->`,
+  currentUserGroupVariable: `<!-- |g_id| -->`,
   allowUserChars: true,
   npcChars: true,
   groupsCanUse: [4],
@@ -902,7 +902,13 @@ const writeCode = () => {
   const inputCode = JSON.stringify(inputData, null, " ");
   const npcCode = JSON.stringify(npcs, null, " ");
   const codeWrap = document.createElement("script");
-  const code = `const switchSettings = ${settingsCode} \n \n let inputData = ${inputCode} \n\n let npcs = ${npcCode}`;
+  const code = `<script> \n\n const switchSettings = ${settingsCode} \n \n 
+  switchSettings.currentUser = parseInt(switchSettings.currentUserVariable);\n
+  switchSettings.currentUserGroup = parseInt(switchSettings.currentUserGroupVariable);\n  
+  switchSettings.memberData = eval(<!-- |field_${switchSettings.customFieldVariable}| -->);\n\n
+  let inputData = ${inputCode} \n\n 
+  let npcs = ${npcCode} \n\n
+  </script>`;
   codeWrap.innerText = code;
   destination.value = code;
 };

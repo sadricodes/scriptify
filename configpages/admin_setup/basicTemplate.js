@@ -6,9 +6,9 @@ const switchSettings = {
   savedCharacterDefault: "-- SELECT A CHARACTER --",
   showSavedDrop: true,
   showInputEntry: true,
-  //   customFieldVariable: <!-- |field_114| -->,
-  //   currentUser: <!-- |id| -->,
-  //   currentUserGroup: <!-- |g_id| -->,
+  customFieldVariable: 114,
+  currentUser: parseInt("<!-- |id| -->"),
+  currentUserGroup: parseInt("<!-- |g_id| -->"),
   allowUserChars: true,
   npcChars: true,
   groupsCanUse: [4],
@@ -16,8 +16,6 @@ const switchSettings = {
   memberCanUse: [1, 3],
   memberCanNotUse: [12, 9],
 };
-
-console.log(switchSettings);
 
 // DEFINE INPUT DATA HERE
 const inputData = [
