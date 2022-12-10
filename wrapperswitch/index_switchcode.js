@@ -4,7 +4,9 @@ import { doSwitch } from "./post_view_functions.js";
 
 // SET SOME GLOBALS
 
-console.log(inputCode);
+const testCode = () => {
+  console.log(inputCode);
+};
 
 const checkPerms = () => {
   const groupCan = switchSettings.groupsCanUse.includes(
@@ -43,4 +45,4 @@ if (getPosts().length > 0) {
   doSwitch();
 }
 
-export { checkPerms };
+export { checkPerms, testCode };
