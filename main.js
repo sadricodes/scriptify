@@ -1,3 +1,3 @@
-import { testCode } from "./wrapperswitch/index_switchcode.js";
+import { testCode } from "./modules/wrapperswitch/index_switchcode.js";
 
 testCode();
