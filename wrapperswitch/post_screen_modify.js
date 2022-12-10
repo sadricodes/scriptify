@@ -1,8 +1,8 @@
 import {
   setTextValsFromSelect,
   bindBackForEdit,
+  setInfo,
 } from "./post_screen_functions.js";
-import { setInfo } from "./post_screen_functions.js";
 
 // CLEAR BUTTON FUNCTION
 const clearAll = () => {

@@ -1,4 +1,4 @@
-import { splitItems } from "./wrapperswitch/helper_functions.js";
+import { splitItems } from "./helper_functions.js";
 
 // GET ALL POST ITEMS
 const getPosts = () => {
