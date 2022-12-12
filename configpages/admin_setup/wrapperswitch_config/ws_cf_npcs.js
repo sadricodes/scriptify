@@ -13,7 +13,9 @@ const getNpcValues = () => {
       const value = input.value;
       if (value === "undefined") {
       }
-      const code = inputData.filter((item) => item.id === ident)[0];
+      const code = switchSettings.inputData.filter(
+        (item) => item.id === ident
+      )[0];
 
       if (code) {
         npc[code.code] = value;

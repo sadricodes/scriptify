@@ -13,6 +13,8 @@ import {
   validateInputFields,
 } from "./ws_cf_validations.js";
 
+const switchSettings = sadriModuleSettings.switchSettings;
+
 // MAKE BOX FOR GROUP PERMISSIONS
 const makeGroupBox = (value, source) => {
   const wrapper = document.createElement("div");
@@ -147,6 +149,7 @@ const makeNpcWrapperItem = (name, content, type, items, id) => {
 
 // MAKE NPC LIST ITEM
 const populateNpcs = (npc) => {
+  const inputData = switchSettings.inputData;
   const sortedInputs = inputData.sort((a, b) => a.order - b.order);
   const npcItem = document.createElement("div");
   npcItem.classList.add("settingSectionLine", "sectionNpcEntry");
@@ -295,6 +298,7 @@ const toggleElement = () => {
 
 // MAKE INPUT DATA BOXES
 const makeInputDataBoxes = (entry) => {
+  const inputData = switchSettings.inputData;
   const inputWrapper = document.createElement("div");
   const inputWrapperHeader = document.createElement("div");
   inputWrapperHeader.classList.add("settingSectionHeader");
@@ -319,10 +323,13 @@ const makeInputDataBoxes = (entry) => {
       defaultOpt.setAttribute("value", "");
       input.appendChild(defaultOpt);
 
-      for (const option in switchSettings.typeOptions) {
+      for (const option in switchSettings.settings.typeOptions) {
         const makeOption = document.createElement("option");
-        makeOption.innerText = switchSettings.typeOptions[option];
-        makeOption.setAttribute("value", switchSettings.typeOptions[option]);
+        makeOption.innerText = switchSettings.settings.typeOptions[option];
+        makeOption.setAttribute(
+          "value",
+          switchSettings.settings.typeOptions[option]
+        );
         input.appendChild(makeOption);
       }
     } else if (item === "order") {
@@ -390,9 +397,9 @@ const makeInputDataBoxes = (entry) => {
   return inputWrapper;
 };
 
-const setFieldValues = (entry) => {
+const setFieldValues = (entry, source) => {
   const target = document.getElementById(entry);
-  const data = switchSettings[entry];
+  const data = switchSettings[source][entry];
 
   if (target) {
     if (target.nodeName === "DIV") {
@@ -429,15 +436,19 @@ const setFieldValues = (entry) => {
 
 // CHECK IF DATA EXISTS AND DISPLAY IT
 const checkIfThereIsData = () => {
-  if (switchSettings) {
+  if (switchSettings.settings) {
     for (const entry in switchSettings) {
-      setFieldValues(entry);
+      console.log(entry);
+      for (const section in switchSettings[entry]) {
+        setFieldValues(section, entry);
+      }
     }
   } else {
     alert("Switch Settings has not been defined");
   }
 
-  if (inputData) {
+  if (switchSettings.inputData) {
+    const inputData = switchSettings.inputData;
     const wrapper = document.createElement("div");
     const destination = document.getElementById("inputEntryBox");
     destination.innerHTML = "";
@@ -464,64 +475,92 @@ const checkIfThereIsData = () => {
   buildNpcs();
 };
 
-// LOAD REQUESTED TAB
-const loadSection = () => {
-  const event = window.event;
-  const section = event.target.getAttribute("originTab");
-  const allButtons = document.querySelectorAll(".buttonTabLine .actionButton");
-  const allSections = document.querySelectorAll("section");
-  const origin = document
-    .querySelectorAll(".activeTab")[0]
-    .getAttribute("originTab");
-
+const validateSwitchOnChange = (origin) => {
   // CONDITIONALLY RESET DATA IF REQUIRED
   if (origin === "inputData") {
     const goOn = validateInputFields();
     if (goOn) {
       setInputChanges();
       checkIfThereIsData();
+      return true;
     } else {
-      return;
+      return false;
     }
   } else if (origin === "basicSettings") {
     const proceed = validateGeneralPermissions(switchSettings);
     if (proceed) {
       getTextValue();
       checkIfThereIsData();
+      return true;
     } else {
-      return;
+      return false;
     }
   } else if (origin === "languageData") {
     getTextValue();
     checkIfThereIsData();
+    return true;
   } else if (origin === "npcCharsSetUp") {
     const proceed = validateNpcFields(inputData, npcs);
     if (proceed) {
       getNpcValues();
       checkIfThereIsData();
+      return true;
     } else {
-      return;
+      return false;
     }
   } else if (origin === "codeResult") {
     const textBox = document.getElementById("generatedCode");
     textBox.value = "";
   }
+};
 
-  // SET ACTIVE TAB COLOUR
-  for (const button of allButtons) {
-    button.classList.remove("activeTab");
+// LOAD REQUESTED TAB
+const loadSection = () => {
+  const event = window.event;
+  const section = event.target.getAttribute("originTab");
+  const allButtons = document.querySelectorAll(
+    ".moduleSettingMenu .actionButton"
+  );
+  const allSections = document.querySelectorAll("section.settingPanel");
+  const origin = document
+    .querySelectorAll(".activeTab")[0]
+    .getAttribute("originTab");
+  const moduleName = document
+    .querySelectorAll(".activeTab")[0]
+    .parentNode.getAttribute("data-module-name");
+  const moduleTo = event.target.parentNode.getAttribute("data-module-name");
+
+  let proceed = true;
+
+  if (moduleName === "switch") {
+    proceed = validateSwitchOnChange(origin);
   }
-  event.target.classList.add("activeTab");
 
-  // SET HIDE AND SHOW SECTIONS
-  for (const sectionItem of allSections) {
-    const ident = sectionItem.getAttribute("id");
-    if (sectionItem.getAttribute("id") === section) {
-      sectionItem.classList.remove("hideSection");
-      sectionItem.classList.add("showSection");
-    } else {
-      sectionItem.classList.remove("showSection");
-      sectionItem.classList.add("hideSection");
+  if (proceed) {
+    // SET ACTIVE TAB COLOUR
+    for (const button of allButtons) {
+      button.classList.remove("activeTab");
+    }
+    event.target.classList.add("activeTab");
+
+    // SET HIDE AND SHOW SECTIONS
+    for (const sectionItem of allSections) {
+      if (sectionItem.getAttribute("id") === section) {
+        sectionItem.classList.remove("hideSection");
+        sectionItem.classList.add("showSection");
+      } else {
+        sectionItem.classList.remove("showSection");
+        sectionItem.classList.add("hideSection");
+      }
+      if (
+        sectionItem.parentNode.getAttribute("data-module-name") === moduleTo
+      ) {
+        sectionItem.parentNode.classList.add("showSection");
+        sectionItem.parentNode.classList.remove("hideSection");
+      } else {
+        sectionItem.parentNode.classList.remove("showSection");
+        sectionItem.parentNode.classList.add("hideSection");
+      }
     }
   }
 };

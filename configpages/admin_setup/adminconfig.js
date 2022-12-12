@@ -25,4 +25,5 @@ window.copyCode = copyCode;
 window.writeCode = writeCode;
 window.addNewInput = addNewInput;
 
+// LOAD INFORMATION
 document.onload = checkIfThereIsData();

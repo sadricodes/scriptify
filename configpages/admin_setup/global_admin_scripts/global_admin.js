@@ -46,9 +46,9 @@ const writeCode = () => {
   const npcCode = JSON.stringify(npcs, null, " ");
   const codeWrap = document.createElement("script");
   const code = `<script> \n\n const switchSettings = ${settingsCode} \n \n 
-    switchSettings.currentUser = parseInt(switchSettings.currentUserVariable);\n
-    switchSettings.currentUserGroup = parseInt(switchSettings.currentUserGroupVariable);\n  
-    switchSettings.memberData = eval(<!-- |field_${switchSettings.customFieldVariable}| -->);\n\n
+    switchSettings.systemData.currentUser = parseInt(switchSettings.systemData.currentUserVariable);\n
+    switchSettings.systemData.currentUserGroup = parseInt(switchSettings.systemData.currentUserGroupVariable);\n  
+    switchSettings.systemData.memberData = eval(<!-- |field_${switchSettings.settings.customFieldVariable}| -->);\n\n
     let inputData = ${inputCode} \n\n 
     let npcs = ${npcCode} \n\n</script>`;
   codeWrap.innerText = code;

@@ -1,3 +1,5 @@
+const switchSettings = sadriModuleSettings.switchSettings;
+
 // CLEAR WARNINGS
 const clearWarnings = () => {
   const allErrorBoxes = document.querySelectorAll(".warningBox");
@@ -11,8 +13,9 @@ const clearWarnings = () => {
 };
 
 // CHECK ALL NPC FIELD FORMS ARE COMPLETED
-const validateNpcFields = (inputData, npcs) => {
+const validateNpcFields = () => {
   clearWarnings();
+  const inputData = switchSettings.inputData;
   const inputs = document.querySelectorAll(".npcEntryInput");
   const requiredFields = inputData.filter((item) => item.required === true);
   let proceed = true;
@@ -59,7 +62,7 @@ const validateInputFields = () => {
 };
 
 // CHECK SAME MEMBER AND GROUPS ARE NOT INLCUDED AND EXCLUDED FOR ACCESS
-const validateGeneralPermissions = (switchSettings) => {
+const validateGeneralPermissions = () => {
   clearWarnings();
   const groupWrap =
     document.getElementById("groupsCanUse").parentNode.parentNode.parentNode;
@@ -69,8 +72,8 @@ const validateGeneralPermissions = (switchSettings) => {
   let membersOk = false;
   let groupsOk = false;
 
-  switchSettings.groupsCanUse.map((no) => {
-    if (switchSettings.groupsCanNotUse.includes(no)) {
+  switchSettings.permissions.groupsCanUse.map((no) => {
+    if (switchSettings.permissions.groupsCanNotUse.includes(no)) {
       groupsOk = false;
       groupWrap.classList.add("errorState");
       const newWarning = document.createElement("div");
@@ -82,8 +85,8 @@ const validateGeneralPermissions = (switchSettings) => {
     }
   });
 
-  switchSettings.memberCanUse.map((no) => {
-    if (switchSettings.memberCanNotUse.includes(no)) {
+  switchSettings.permissions.memberCanUse.map((no) => {
+    if (switchSettings.permissions.memberCanNotUse.includes(no)) {
       membersOk = false;
       membWrap.classList.add("errorState");
       const newWarning = document.createElement("div");

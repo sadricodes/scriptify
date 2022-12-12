@@ -1,9 +1,12 @@
 import { checkIfThereIsData } from "./ws_cf_buildPage.js";
 
+const switchSettings = sadriModuleSettings.switchSettings;
+
 // CHANGE VALUES ON CHECKBOX TOGGLE
 const setSetting = () => {
+  console.log(switchSettings);
   const settingName = window.event.target.getAttribute("id");
-  switchSettings[settingName] = window.event.target.checked;
+  switchSettings.settings[settingName] = window.event.target.checked;
 };
 
 // REMOVE GROUP PERMISSION ITEM
@@ -11,8 +14,10 @@ const removeGroupItem = (e) => {
   const item = parseInt(e.target.innerText);
   const property = e.target.parentNode.getAttribute("id");
   if (confirm(`Are you sure you want to remove ${item} from this list?`)) {
-    const newArray = switchSettings[property].filter((no) => no !== item);
-    switchSettings[property] = newArray;
+    const newArray = switchSettings.permissions[property].filter(
+      (no) => no !== item
+    );
+    switchSettings.permissions[property] = newArray;
     checkIfThereIsData();
   }
 };
@@ -21,10 +26,10 @@ const removeGroupItem = (e) => {
 const addToList = (valueId, propName) => {
   const input = document.getElementById(valueId);
   const value = parseInt(input.value);
-  if (switchSettings[propName].includes(value)) {
+  if (switchSettings.permissions[propName].includes(value)) {
     // DO NOTHING
   } else {
-    switchSettings[propName].push(value);
+    switchSettings.permissions[propName].push(value);
   }
   input.value = "";
 
@@ -37,7 +42,7 @@ const getTextValue = () => {
   for (const input of inputs) {
     const data = input.value;
     const id = input.getAttribute("id");
-    switchSettings[id] = data;
+    switchSettings.languageStrings[id] = data;
   }
 };
 
