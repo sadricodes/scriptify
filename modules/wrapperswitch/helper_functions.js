@@ -25,7 +25,7 @@ const splitItems = (items) => {
       itemList: [],
     };
 
-    for (const input of inputData) {
+    for (const input of sMSet.switchSettings.inputData) {
       const startMarker = `${input.code}-`;
       const endMarker = `-${input.code}`;
 

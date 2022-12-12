@@ -249,7 +249,7 @@ textarea {
   background: var(--warningColour);
   border: 0;
   border-radius: 5px;
-  padding: 0 10px;
+  padding: 5px 10px;
   color: var(--boxItemsText);
 }
 
@@ -305,6 +305,18 @@ textarea {
   flex-basis: 50%;
   flex-grow: 1;
   gap: 1ch;
+  align-items: flex-start;
+}
+
+#enablePlugins .settingSectionLine {
+  flex-basis: 100%;
+  padding: 10px;
+  border: 1px solid var(--softColour);
+  border-radius: 10px;
+  display: flex;
+  font-size: 1.2rem;
+  justify-content: space-between;
+  align-items: center;
 }
 
 #inputEntryBox .errorState,

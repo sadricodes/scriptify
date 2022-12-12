@@ -30,6 +30,27 @@ const getNpcValues = () => {
   sMSet.switchSettings.npcs = npcList;
 };
 
+// DELETE AN NPC FROM THE LIST
+
+const deleteNpc = () => {
+  const e = window.event;
+  const npcId =
+    e.target.parentNode.parentNode.getAttribute("switch-data-npc-id");
+  const npc = sMSet.switchSettings.npcs.find(
+    (char) => char.shortcode === npcId
+  );
+  const proceed = confirm(`Are you sure you want to delete ${npc.name}?`);
+  if (proceed) {
+    console.log("delete", npc);
+    const newNpcList = sMSet.switchSettings.npcs.filter(
+      (char) => char.shortcode !== npcId
+    );
+    sMSet.switchSettings.npcs = newNpcList;
+    console.log(newNpcList);
+    checkIfThereIsData();
+  }
+};
+
 // ADD NEW EMPTY NPC TO LIST
 const addNewNpc = () => {
   getNpcValues();
@@ -90,4 +111,4 @@ const removeNpcItem = (e) => {
   checkIfThereIsData();
 };
 
-export { addNpcItem, addNewNpc, getNpcValues, removeNpcItem };
+export { addNpcItem, addNewNpc, getNpcValues, removeNpcItem, deleteNpc };

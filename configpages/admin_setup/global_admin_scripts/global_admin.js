@@ -1,6 +1,39 @@
 import { getNpcValues } from "../wrapperswitch_config/ws_cf_npcs.js";
 import { getTextValue } from "../wrapperswitch_config/ws_cf_baseSettings.js";
 import { setInputChanges } from "../wrapperswitch_config/ws_cf_inputs.js";
+import { checkIfThereIsData } from "../wrapperswitch_config/ws_cf_buildPage.js";
+
+// TOGGLE MODULE SET UP
+
+const setModuleToggle = () => {
+  const moduleButtons = document.querySelectorAll(
+    "#enablePlugins .moduleToggle"
+  );
+
+  for (const button of moduleButtons) {
+    const moduleName = button.getAttribute("data-module-name");
+    if (sMSet[moduleName].currentlyEnabled) {
+      button.classList.add("warningButton");
+      button.classList.remove("actionButton");
+      button.innerText = "Disable";
+    } else if (!sMSet[moduleName].currentlyEnabled) {
+      button.classList.add("actionButton");
+      button.classList.remove("warningButton");
+      button.innerText = "Enable";
+    }
+  }
+  checkIfThereIsData();
+};
+
+// TOGGLE MODULES
+const setModuleState = () => {
+  const moduleName = window.event.target.getAttribute("data-module-name");
+  sMSet[moduleName].currentlyEnabled = sMSet[moduleName].currentlyEnabled
+    ? false
+    : true;
+
+  setModuleToggle();
+};
 
 // GET INFORMATION AND REDRAW PAGE
 const reDraw = () => {
@@ -57,4 +90,4 @@ sMSet.switchSettings.systemData.memberData = eval(<!-- |field_${sMSet.switchSett
   destination.value = code;
 };
 
-export { copyCode, writeCode, reDraw };
+export { copyCode, writeCode, reDraw, setModuleToggle, setModuleState };

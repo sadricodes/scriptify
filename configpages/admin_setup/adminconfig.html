@@ -23,8 +23,8 @@
                     <button class="actionButton" originTab="codeResult" onclick="loadSection()">Generate
                         Code</button>
             </div>
-            <div class="moduleSettingMenu" data-module-name="switch">
-                <h4 class="moduleMenuName">Jcink Switch Settings</h1>
+            <div class="moduleSettingMenu hideSection" data-module-name="switch">
+                <h4 class="moduleMenuName">Post Wrapper Switch</h1>
                     <button class="actionButton" originTab="basicSettings" onclick="loadSection()">General
                         Settings</button>
                     <button class=" actionButton" originTab="languageData" onclick="loadSection()">Language
@@ -37,11 +37,15 @@
         </div>
 
         <!-- GLOBAL SETTINGS -->
-        <section id="systemSettings" data-module-name="base">
+        <section id="systemSettings" data-module-name="base" class="showSection">
 
             <!-- ENABLE/DISABLE PLUGINS -->
             <section id="enablePlugins" class="showSection settingPanel">
-                This is where stuff can be enabled and disabled
+                <h2>System Settings</h2>
+                <div class="settingHeader">Enable/Disable Plugins</div>
+                <div class="settingSectionLine"><span>Post Wrapper Switch</span> <button
+                        data-module-name="switchSettings" onclick="setModuleState()" class="
+                        moduleToggle">Enable</button></div>
             </section>
 
             <!-- CODE RESULT CONTAINER-->
@@ -63,7 +67,7 @@
                 <!-- MAKE GENERAL SETTINGS -->
                 <div class="settingHeader">General Settings</div>
                 <div class="settingSectionBox">
-                    <div class="settingSectionHeader">Switch System Settings</div>
+                    <div class="settingSectionHeader">Enable/Disable Features</div>
                     <div class="settingSectionOptions">
                         <div class="settingSectionLine">
                             <span>User Characters Allowed</span>
@@ -88,6 +92,17 @@
                     </div>
                 </div>
 
+                <!-- MAKE PARTICULAR SETTINGS -->
+                <div class="settingSectionBox">
+                    <div class="settingSectionHeader">Switch System Settings</div>
+                    <div class="settingSectionOptions">
+                        <div class="settingSectionLine">
+                            <span>User Characters Allowed</span>
+                            <input name="fieldNumber" type="number" id="customFieldVariable" onchange="setSetting()"
+                                class="settingBox">
+                        </div>
+                    </div>
+                </div>
                 <!-- MAKE PERMISSIONS ENTRIES -->
                 <div class="settingSectionBox">
                     <div class="settingSectionHeader">Group Permissions</div>

@@ -8,7 +8,12 @@ import {
   addToList,
 } from "./wrapperswitch_config/ws_cf_baseSettings.js";
 
-import { copyCode, writeCode } from "./global_admin_scripts/global_admin.js";
+import {
+  copyCode,
+  writeCode,
+  setModuleToggle,
+  setModuleState,
+} from "./global_admin_scripts/global_admin.js";
 
 import {
   removeInputItem,
@@ -24,6 +29,8 @@ window.removeInputItem = removeInputItem;
 window.copyCode = copyCode;
 window.writeCode = writeCode;
 window.addNewInput = addNewInput;
+window.setModuleState = setModuleState;
 
+setModuleToggle();
 // LOAD INFORMATION
 document.onload = checkIfThereIsData();

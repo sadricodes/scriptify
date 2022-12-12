@@ -28,14 +28,6 @@ const doSwitch = () => {
     const switchItems = getSwitchItemsText(postDiv);
     const itemsArray = splitItems(switchItems);
 
-    // const charObject = eval(
-    //   post[1]
-    //     .querySelector('[switch-data-functional="container"]')
-    //     .getAttribute("switch-data-data")
-    // );
-
-    // console.log(charObject);
-
     if (itemsArray) {
       itemsArray.itemList.map((item) => {
         if (item != undefined) {

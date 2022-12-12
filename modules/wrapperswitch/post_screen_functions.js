@@ -7,7 +7,10 @@ const makeReplaceString = (key, value) => {
 
 // GET CHARACTER ENTRY FROM DROPDOWN
 const getDropCharacterValue = () => {
-  const characterPool = [...npcs, ...switchSettings.memberData];
+  const characterPool = [
+    ...sMSet.switchSettings.npcs,
+    ...sMSet.switchSettings.systemData.memberData,
+  ];
 
   const dropVal = document.getElementById("dropselect").value;
   const char = characterPool.filter((char) => char.shortcode == dropVal)[0];

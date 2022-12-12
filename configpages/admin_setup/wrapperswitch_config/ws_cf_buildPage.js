@@ -4,6 +4,7 @@ import {
   addNewNpc,
   addNpcItem,
   getNpcValues,
+  deleteNpc,
 } from "./ws_cf_npcs.js";
 import { makeDropdownItems } from "../../../global_scripts/global_helpers.js";
 import { switchValues, setInputChanges } from "./ws_cf_inputs.js";
@@ -170,6 +171,7 @@ const populateNpcs = (npc) => {
   const npcDelete = document.createElement("button");
   npcDelete.innerText = `Delete ${npc.name}`;
   npcDelete.classList.add("warningButton");
+  npcDelete.addEventListener("click", deleteNpc);
   const npcDesc = document.createElement("span");
   npcDesc.innerText = npc.desc;
   npcDesc.classList.add("npcDescription");
@@ -472,42 +474,50 @@ const setFieldValues = (entry, source) => {
 
 // CHECK IF DATA EXISTS AND DISPLAY IT
 const checkIfThereIsData = () => {
-  if (sMSet.switchSettings.settings) {
-    for (const entry in sMSet.switchSettings) {
-      for (const section in sMSet.switchSettings[entry]) {
-        setFieldValues(section, entry);
+  // SEE IF THE SWITCH SYSTEM IS ENABLED
+  const menuDiv = document.querySelector('[data-module-name="switch"]');
+  if (sMSet.switchSettings.currentlyEnabled) {
+    menuDiv.classList.remove("hideSection");
+    if (sMSet.switchSettings.settings) {
+      for (const entry in sMSet.switchSettings) {
+        for (const section in sMSet.switchSettings[entry]) {
+          setFieldValues(section, entry);
+        }
       }
+    } else {
+      alert("Switch Settings has not been defined");
     }
-  } else {
-    alert("Switch Settings has not been defined");
-  }
 
-  if (sMSet.switchSettings.inputData) {
-    const inputData = sMSet.switchSettings.inputData;
-    const wrapper = document.createElement("div");
-    const destination = document.getElementById("inputEntryBox");
-    destination.innerHTML = "";
+    if (sMSet.switchSettings.inputData) {
+      const inputData = sMSet.switchSettings.inputData;
+      const wrapper = document.createElement("div");
+      const destination = document.getElementById("inputEntryBox");
+      destination.innerHTML = "";
 
-    const sortedInputs = inputData.sort((a, b) => a.order - b.order);
+      const sortedInputs = inputData.sort((a, b) => a.order - b.order);
 
-    for (const entry in sortedInputs) {
-      const box = makeInputDataBoxes(entry);
-      wrapper.appendChild(box);
+      for (const entry in sortedInputs) {
+        const box = makeInputDataBoxes(entry);
+        wrapper.appendChild(box);
+      }
+      const buttonRow = document.createElement("div");
+      buttonRow.classList.add("buttonrow");
+      const addNew = document.createElement("button");
+      addNew.setAttribute("onclick", "addNewInput()");
+      addNew.innerText = "Add New Input";
+      addNew.classList.add("actionButton");
+      buttonRow.appendChild(addNew);
+      wrapper.appendChild(buttonRow);
+      destination.appendChild(wrapper);
+    } else {
+      alert("Input data has not been defined");
     }
-    const buttonRow = document.createElement("div");
-    buttonRow.classList.add("buttonrow");
-    const addNew = document.createElement("button");
-    addNew.setAttribute("onclick", "addNewInput()");
-    addNew.innerText = "Add New Input";
-    addNew.classList.add("actionButton");
-    buttonRow.appendChild(addNew);
-    wrapper.appendChild(buttonRow);
-    destination.appendChild(wrapper);
-  } else {
-    alert("Input data has not been defined");
-  }
 
-  buildNpcs();
+    buildNpcs();
+  } else {
+    // SOMETHING IF SWITCH NOT ENABLED HERE
+    menuDiv.classList.add("hideSection");
+  }
 };
 
 const validateSwitchOnChange = (origin) => {

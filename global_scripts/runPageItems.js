@@ -5,13 +5,14 @@ import {
 } from "../modules/wrapperswitch/post_view_functions.js";
 
 const runScript = () => {
-  console.log("gotta know what page we're on first");
+  // CHECK IF WRAPPER SWITCH IS ENABLED
+  if (sMSet.switchSettings.currentlyEnabled) {
+    runWrapperSwitch();
 
-  runWrapperSwitch();
-
-  // CHECK IF WE ARE ON A TOPIC VIEW
-  if (getPosts().length > 0) {
-    doSwitch();
+    // CHECK IF WE ARE ON A TOPIC VIEW
+    if (getPosts().length > 0) {
+      doSwitch();
+    }
   }
 };
 

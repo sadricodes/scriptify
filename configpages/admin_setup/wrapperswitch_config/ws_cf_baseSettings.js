@@ -2,9 +2,12 @@ import { checkIfThereIsData } from "./ws_cf_buildPage.js";
 
 // CHANGE VALUES ON CHECKBOX TOGGLE
 const setSetting = () => {
-  console.log(sMSet.switchSettings);
   const settingName = window.event.target.getAttribute("id");
-  sMSet.switchSettings.settings[settingName] = window.event.target.checked;
+  if (window.event.target.type === "checkbox") {
+    sMSet.switchSettings.settings[settingName] = window.event.target.checked;
+  } else if (window.event.target.type === "number") {
+    sMSet.switchSettings.settings[settingName] = window.event.target.value;
+  }
 };
 
 // REMOVE GROUP PERMISSION ITEM
