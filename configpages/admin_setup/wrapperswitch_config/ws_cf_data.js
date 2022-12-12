@@ -31,6 +31,32 @@ const sMSet = {
     systemData: {
       currentUserVariable: `<!-- |id| -->`,
       currentUserGroupVariable: `<!-- |g_id| -->`,
+      memberData: [
+        {
+          name: "Merlwyb",
+          avatar: "https://img.nickpic.host/FLUPF5.png",
+          shortcode: "ade",
+          sts: "this is a status",
+          order: 3,
+          type: "pc",
+        },
+        {
+          name: "Gold Mario",
+          avatar: "https://img.nickpic.host/atc3Xf.png",
+          shortcode: "abd",
+          order: 1,
+          sts: "gold mario should have a status too",
+          type: "pc",
+        },
+        {
+          name: "Lord Hien",
+          avatar: "https://img.nickpic.host/FLUz1n.png",
+          shortcode: "hie",
+          order: 2,
+          sts: "Lord Bae for life",
+          type: "pc",
+        },
+      ],
     },
     inputData: [
       {

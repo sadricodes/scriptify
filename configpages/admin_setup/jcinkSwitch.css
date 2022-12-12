@@ -16,7 +16,7 @@
   flex-grow: 1;
 }
 
-#adminConfig {
+.sadriCodesModules {
   --mainColour: black;
   --softColour: rgb(184, 181, 181);
   --textColour: black;
@@ -87,14 +87,14 @@
   font-size: 1.1rem;
 }
 
-#adminConfig section {
+section {
   display: flex;
   flex-wrap: wrap;
   flex-grow: 1;
 }
 
-#adminConfig input,
-#adminConfig select {
+input,
+select {
   padding: 10px;
   border: 1px solid var(--softColour);
   border-radius: 5px;
@@ -295,12 +295,12 @@ textarea {
   background: var(--boxItems);
 }
 
-#adminConfig .hideSection,
+.hideSection,
 .hideNpcDiv {
   display: none;
 }
 
-#adminConfig .showSection {
+.showSection {
   display: flex;
   flex-basis: 50%;
   flex-grow: 1;

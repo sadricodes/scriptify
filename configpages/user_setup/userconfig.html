@@ -1,0 +1,59 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../admin_setup/jcinkSwitch.css">
+    <script src="../admin_setup/wrapperswitch_config/ws_cf_data.js"></script>
+</head>
+
+<body>
+
+    <div class="sadriCodesModules adminwrapper" id="userConfig">
+        <h1>User setting stuff for plugins</h1>
+        <div class="adminMenuWrap">
+            <div class="moduleSettingMenu">
+                <h4 class="moduleMenuName">Introduction</h4>
+                <button class="actionButton activeTab" originTab="introPage" onclick="loadSection()">What is
+                    this?</button>
+            </div>
+            <div class="moduleSettingMenu" data-module-name="wrapperSwitch">
+                <h4 class="moduleMenuName">Wrapper Switch</h4>
+                <button class="actionButton" originTab="userCharacters" onclick="loadSection()">My Characters</button>
+                <button class="actionButton" originTab="characterCode" onclick="loadSection()">Get Character
+                    Code</button>
+            </div>
+        </div>
+        <section id="basePage" class="showSection">
+            <section id="introPage" class="showSection settingPanel">
+                <h2>User Module Settings</h2>
+                <div class="settingHeader">What is this?</div>
+            </section>
+        </section>
+        <section data-module-name="wrapperSwitch" id="switchSettingPanel" class="hideSection">
+            <section id="userCharacters" class="settingPanel hideSection">
+                <h2>Wrapper Switch</h2>
+                <div class="settingHeader">User Characters
+                </div>
+                <div id="userCharList"></div>
+            </section>
+            <section id="characterCode" class="settingPanel hideSection">
+                <h2>Wrapper Switch</h2>
+                <div class="settingHeader">Generate Character Code
+                </div>
+                <div class="buttontabline">
+                    <button class="actionButton" onclick="makeCode()">Generate Character Code</button>
+                    <button class="actionButton">Copy Code</button>
+                </div>
+                <textarea id="generatedCode"></textarea>
+                <div id="generateCharacterCode"></div>
+            </section>
+        </section>
+    </div>
+
+    <script src="./global_user_scripts/global_user.js" type="module"></script>
+</body>
+
+</html>
