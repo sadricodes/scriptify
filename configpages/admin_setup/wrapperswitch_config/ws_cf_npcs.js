@@ -6,30 +6,34 @@ const getNpcValues = () => {
   const npcDivs = document.querySelectorAll(".sectionNpcEntry");
   for (const div of npcDivs) {
     const id = div.getAttribute("switch-data-npc-id");
-    const npc = npcs.filter((char) => char.shortcode === id)[0];
+    const npc = sMSet.switchSettings.npcs.filter(
+      (char) => char.shortcode === id
+    )[0];
     const inputs = div.querySelectorAll(".npcEntryInput");
     for (const input of inputs) {
       const ident = input.getAttribute("switch-data-input");
       const value = input.value;
       if (value === "undefined") {
       }
-      const code = switchSettings.inputData.filter(
+      const code = sMSet.switchSettings.inputData.filter(
         (item) => item.id === ident
       )[0];
 
       if (code) {
         npc[code.code] = value;
+      } else if (ident) {
+        npc[ident] = value;
       }
     }
     npcList.push(npc);
   }
-  npcs = npcList;
+  sMSet.switchSettings.npcs = npcList;
 };
 
 // ADD NEW EMPTY NPC TO LIST
 const addNewNpc = () => {
   getNpcValues();
-  const exampleNpc = npcs[1];
+  const exampleNpc = sMSet.switchSettings.npcs[1];
   const newNpc = {};
   for (const property in exampleNpc) {
     if (property === "type") {
@@ -37,7 +41,7 @@ const addNewNpc = () => {
     } else if (property === "name") {
       newNpc[property] = "New Character";
     } else if (property === "order") {
-      newNpc[property] = npcs.length + 1;
+      newNpc[property] = sMSet.switchSettings.npcs.length + 1;
     } else if (property === "shortcode") {
       newNpc[property] = `npc-${Date.now()}`;
     } else if (
@@ -50,8 +54,8 @@ const addNewNpc = () => {
       newNpc[property] = "";
     }
   }
-  const fullList = [...npcs, newNpc];
-  npcs = fullList;
+  const fullList = [...sMSet.switchSettings.npcs, newNpc];
+  sMSet.switchSettings.npcs = fullList;
   checkIfThereIsData();
 };
 
@@ -60,7 +64,9 @@ const addNpcItem = (id, npc, property) => {
   const input = document.getElementById(id);
   const value = parseInt(input.value);
 
-  const char = npcs.filter((npcList) => npcList.shortcode === npc)[0];
+  const char = sMSet.switchSettings.npcs.filter(
+    (npcList) => npcList.shortcode === npc
+  )[0];
   char[property].push(value);
 
   checkIfThereIsData();
@@ -74,7 +80,7 @@ const removeNpcItem = (e) => {
   );
   if (makeSure) {
     const property = e.target.parentNode.getAttribute("switch-data-extype");
-    const npcEntry = npcs.filter(
+    const npcEntry = sMSet.switchSettings.npcs.filter(
       (char) =>
         char.shortcode === e.target.parentNode.getAttribute("switch-data-npc")
     );

@@ -28,6 +28,38 @@
   --fieldTitleText: rgb(97, 96, 96);
 }
 
+.sectionNpcEntry .outputs {
+  padding: 0 10px;
+}
+
+.npcDescription {
+  flex-grow: 1;
+  padding: 5px 0;
+  font-size: 0.8rem;
+  min-height: 20px;
+}
+
+.itemEx input {
+  flex-basis: 10px;
+  flex-shrink: 1;
+  min-width: 10px;
+}
+
+.showNpcdiv + .outputs {
+  height: 30px;
+  justify-content: flex-end;
+  margin-bottom: 40px;
+  padding: 0 20px;
+}
+
+.showNpcdiv + .outputs button {
+  font-size: 1.1rem;
+}
+
+.showNpcdiv + .outputs .npcDescription {
+  display: none;
+}
+
 .moduleSettingMenu {
   display: flex;
   flex-wrap: wrap;
@@ -195,7 +227,7 @@ textarea {
   color: var(--fieldTitleText);
 }
 
-#inputEntryBox .outputs {
+.outputs {
   display: flex;
   flex-basis: 40%;
   flex-grow: 1;

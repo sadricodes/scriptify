@@ -41,16 +41,18 @@ const writeCode = () => {
   reDraw();
   // write the json code here
   const destination = document.getElementById("generatedCode");
-  const settingsCode = JSON.stringify(switchSettings, null, " ");
-  const inputCode = JSON.stringify(inputData, null, " ");
-  const npcCode = JSON.stringify(npcs, null, " ");
+  const settingsCode = JSON.stringify(sMSet, null, " ");
   const codeWrap = document.createElement("script");
-  const code = `<script> \n\n const switchSettings = ${settingsCode} \n \n 
-    switchSettings.systemData.currentUser = parseInt(switchSettings.systemData.currentUserVariable);\n
-    switchSettings.systemData.currentUserGroup = parseInt(switchSettings.systemData.currentUserGroupVariable);\n  
-    switchSettings.systemData.memberData = eval(<!-- |field_${switchSettings.settings.customFieldVariable}| -->);\n\n
-    let inputData = ${inputCode} \n\n 
-    let npcs = ${npcCode} \n\n</script>`;
+  const code = `
+<script>
+  
+const sMSet = ${settingsCode}
+
+sMSet.switchSettings.systemData.currentUser = parseInt(sMSet.switchSettings.systemData.currentUserVariable);
+sMSet.switchSettings.systemData.currentUserGroup = parseInt(sMSet.switchSettings.systemData.currentUserGroupVariable); 
+sMSet.switchSettings.systemData.memberData = eval(<!-- |field_${sMSet.switchSettings.settings.customFieldVariable}| -->);
+    
+</script>`;
   codeWrap.innerText = code;
   destination.value = code;
 };

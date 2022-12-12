@@ -1,5 +1,3 @@
-const switchSettings = sadriModuleSettings.switchSettings;
-
 // CLEAR WARNINGS
 const clearWarnings = () => {
   const allErrorBoxes = document.querySelectorAll(".warningBox");
@@ -15,7 +13,7 @@ const clearWarnings = () => {
 // CHECK ALL NPC FIELD FORMS ARE COMPLETED
 const validateNpcFields = () => {
   clearWarnings();
-  const inputData = switchSettings.inputData;
+  const inputData = sMSet.switchSettings.inputData;
   const inputs = document.querySelectorAll(".npcEntryInput");
   const requiredFields = inputData.filter((item) => item.required === true);
   let proceed = true;
@@ -31,9 +29,12 @@ const validateNpcFields = () => {
       proceed = false;
     }
   }
-  const doThis = proceed && validateNpcPermissions(npcs);
 
-  return doThis;
+  if (proceed && validateNpcPermissions(sMSet.switchSettings.npcs)) {
+    return true;
+  } else {
+    return false;
+  }
 };
 
 // CHECK ALL INPUT FORM FIELDS ARE COMPLETED
@@ -72,8 +73,8 @@ const validateGeneralPermissions = () => {
   let membersOk = false;
   let groupsOk = false;
 
-  switchSettings.permissions.groupsCanUse.map((no) => {
-    if (switchSettings.permissions.groupsCanNotUse.includes(no)) {
+  sMSet.switchSettings.permissions.groupsCanUse.map((no) => {
+    if (sMSet.switchSettings.permissions.groupsCanNotUse.includes(no)) {
       groupsOk = false;
       groupWrap.classList.add("errorState");
       const newWarning = document.createElement("div");
@@ -85,8 +86,8 @@ const validateGeneralPermissions = () => {
     }
   });
 
-  switchSettings.permissions.memberCanUse.map((no) => {
-    if (switchSettings.permissions.memberCanNotUse.includes(no)) {
+  sMSet.switchSettings.permissions.memberCanUse.map((no) => {
+    if (sMSet.switchSettings.permissions.memberCanNotUse.includes(no)) {
       membersOk = false;
       membWrap.classList.add("errorState");
       const newWarning = document.createElement("div");

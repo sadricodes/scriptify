@@ -13,8 +13,6 @@ import {
   validateInputFields,
 } from "./ws_cf_validations.js";
 
-const switchSettings = sadriModuleSettings.switchSettings;
-
 // MAKE BOX FOR GROUP PERMISSIONS
 const makeGroupBox = (value, source) => {
   const wrapper = document.createElement("div");
@@ -73,21 +71,24 @@ const makeExclusionBoxes = (property, titleYes, titleNo, npc) => {
 
 // TOGGLE FUNCTION FOR NPC ITEMS
 const toggleNpc = (e) => {
-  const char =
+  const charId =
     e.target.parentNode.parentNode.getAttribute("switch-data-npc-id");
 
-  const toggleState = e.target.innerText;
+  const char = sMSet.switchSettings.npcs.find((ch) => ch.shortcode === charId);
 
-  if (e.target.innerText === "Show") {
+  const toggleState = e.target.innerText;
+  char.toggleOpen = char.toggleOpen ? false : true;
+
+  if (e.target.innerText === "Edit") {
     e.target.innerText = "Hide";
   } else if (e.target.innerText === "Hide") {
-    e.target.innerText = "Show";
+    e.target.innerText = "Edit";
   }
 
   const targetDivs =
     e.target.parentNode.parentNode.querySelectorAll(".npcInputBox");
   for (const div of targetDivs) {
-    if (toggleState === "Show") {
+    if (toggleState === "Edit") {
       div.classList.add("showNpcDiv");
       div.classList.remove("hideNpcDiv");
     } else if (toggleState === "Hide") {
@@ -108,6 +109,8 @@ const makeNpcWrapperItem = (name, content, type, items, id) => {
 
   if (type === "text") {
     itemInput = document.createElement("input");
+  } else if (type === "textarea") {
+    itemInput = document.createElement("textarea");
   } else if (type === "select") {
     itemInput = document.createElement("select");
 
@@ -149,7 +152,7 @@ const makeNpcWrapperItem = (name, content, type, items, id) => {
 
 // MAKE NPC LIST ITEM
 const populateNpcs = (npc) => {
-  const inputData = switchSettings.inputData;
+  const inputData = sMSet.switchSettings.inputData;
   const sortedInputs = inputData.sort((a, b) => a.order - b.order);
   const npcItem = document.createElement("div");
   npcItem.classList.add("settingSectionLine", "sectionNpcEntry");
@@ -158,14 +161,27 @@ const populateNpcs = (npc) => {
   npcHeader.classList.add("settingSectionHeader");
   const toggleButton = document.createElement("button");
   toggleButton.classList.add("actionButton");
-  toggleButton.innerText = "Show";
+  toggleButton.innerText = npc.toggleOpen ? "Hide" : "Edit";
   toggleButton.addEventListener("click", (e) => toggleNpc(e));
   npcHeader.innerText = npc.name;
   npcHeader.appendChild(toggleButton);
   npcItem.appendChild(npcHeader);
+  const npcBottom = document.createElement("div");
+  const npcDelete = document.createElement("button");
+  npcDelete.innerText = `Delete ${npc.name}`;
+  npcDelete.classList.add("warningButton");
+  const npcDesc = document.createElement("span");
+  npcDesc.innerText = npc.desc;
+  npcDesc.classList.add("npcDescription");
+  npcBottom.appendChild(npcDesc);
+  npcBottom.appendChild(npcDelete);
+  npcBottom.classList.add("outputs");
 
   const npcDetails = document.createElement("div");
-  npcDetails.classList.add("npcInputBox", "hideNpcDiv");
+  npc.toggleOpen
+    ? npcDetails.classList.add("npcInputBox", "showNpcDiv")
+    : npcDetails.classList.add("npcInputBox", "hideNpcDiv");
+
   for (const item in sortedInputs) {
     const code = sortedInputs[item].code;
     const itemWrapper = makeNpcWrapperItem(
@@ -179,14 +195,25 @@ const populateNpcs = (npc) => {
   }
 
   const npcPermissions = document.createElement("div");
-  npcPermissions.classList.add("npcInputBox", "hideNpcDiv");
+  npc.toggleOpen
+    ? npcPermissions.classList.add("npcInputBox", "showNpcDiv")
+    : npcPermissions.classList.add("npcInputBox", "hideNpcDiv");
   const exBoxesWrap = document.createElement("div");
   exBoxesWrap.classList.add("exBoxWrap");
   for (const property in npc) {
     if (inputData.find((item) => item.code === property)) {
       continue;
     } else {
-      if (property === "shortcode") {
+      if (property === "desc") {
+        const itemWrapper = makeNpcWrapperItem(
+          property,
+          npc[property],
+          "textarea",
+          "",
+          property
+        );
+        npcDetails.appendChild(itemWrapper);
+      } else if (property === "shortcode") {
         const itemWrapper = makeNpcWrapperItem(
           property,
           npc[property],
@@ -200,7 +227,7 @@ const populateNpcs = (npc) => {
           property,
           npc[property],
           "select",
-          npcs,
+          sMSet.switchSettings.npcs,
           property
         );
         npcDetails.appendChild(itemWrapper);
@@ -249,17 +276,23 @@ const populateNpcs = (npc) => {
   npcPermissions.appendChild(exBoxesWrap);
   npcItem.appendChild(npcDetails);
   npcItem.appendChild(npcPermissions);
+  npcItem.appendChild(npcBottom);
 
   return npcItem;
 };
 
 // BUILD LIST OF NPCS
 const buildNpcs = () => {
-  if (npcs.length > 0 && inputData) {
+  if (
+    sMSet.switchSettings.npcs.length > 0 &&
+    sMSet.switchSettings.inputData.length > 0
+  ) {
     const npcDestination = document.getElementById("npcEntries");
     npcDestination.innerHTML = "";
     const npcBox = document.createElement("div");
-    const sortedNpcs = npcs.sort((a, b) => a.order - b.order);
+    const sortedNpcs = sMSet.switchSettings.npcs.sort(
+      (a, b) => a.order - b.order
+    );
     for (const npc in sortedNpcs) {
       const npcBlock = populateNpcs(sortedNpcs[npc]);
       npcBox.appendChild(npcBlock);
@@ -269,7 +302,9 @@ const buildNpcs = () => {
     const newNpcButton = document.createElement("button");
     newNpcButton.classList.add("actionButton");
     newNpcButton.innerText = "Add New NPC";
-    newNpcButton.addEventListener("click", () => addNewNpc(npcs));
+    newNpcButton.addEventListener("click", () =>
+      addNewNpc(sMSet.switchSettings.npcs)
+    );
     containingDiv.appendChild(newNpcButton);
 
     npcDestination.appendChild(npcBox);
@@ -298,7 +333,7 @@ const toggleElement = () => {
 
 // MAKE INPUT DATA BOXES
 const makeInputDataBoxes = (entry) => {
-  const inputData = switchSettings.inputData;
+  const inputData = sMSet.switchSettings.inputData;
   const inputWrapper = document.createElement("div");
   const inputWrapperHeader = document.createElement("div");
   inputWrapperHeader.classList.add("settingSectionHeader");
@@ -323,12 +358,13 @@ const makeInputDataBoxes = (entry) => {
       defaultOpt.setAttribute("value", "");
       input.appendChild(defaultOpt);
 
-      for (const option in switchSettings.settings.typeOptions) {
+      for (const option in sMSet.switchSettings.settings.typeOptions) {
         const makeOption = document.createElement("option");
-        makeOption.innerText = switchSettings.settings.typeOptions[option];
+        makeOption.innerText =
+          sMSet.switchSettings.settings.typeOptions[option];
         makeOption.setAttribute(
           "value",
-          switchSettings.settings.typeOptions[option]
+          sMSet.switchSettings.settings.typeOptions[option]
         );
         input.appendChild(makeOption);
       }
@@ -399,7 +435,7 @@ const makeInputDataBoxes = (entry) => {
 
 const setFieldValues = (entry, source) => {
   const target = document.getElementById(entry);
-  const data = switchSettings[source][entry];
+  const data = sMSet.switchSettings[source][entry];
 
   if (target) {
     if (target.nodeName === "DIV") {
@@ -436,10 +472,9 @@ const setFieldValues = (entry, source) => {
 
 // CHECK IF DATA EXISTS AND DISPLAY IT
 const checkIfThereIsData = () => {
-  if (switchSettings.settings) {
-    for (const entry in switchSettings) {
-      console.log(entry);
-      for (const section in switchSettings[entry]) {
+  if (sMSet.switchSettings.settings) {
+    for (const entry in sMSet.switchSettings) {
+      for (const section in sMSet.switchSettings[entry]) {
         setFieldValues(section, entry);
       }
     }
@@ -447,8 +482,8 @@ const checkIfThereIsData = () => {
     alert("Switch Settings has not been defined");
   }
 
-  if (switchSettings.inputData) {
-    const inputData = switchSettings.inputData;
+  if (sMSet.switchSettings.inputData) {
+    const inputData = sMSet.switchSettings.inputData;
     const wrapper = document.createElement("div");
     const destination = document.getElementById("inputEntryBox");
     destination.innerHTML = "";
@@ -487,7 +522,7 @@ const validateSwitchOnChange = (origin) => {
       return false;
     }
   } else if (origin === "basicSettings") {
-    const proceed = validateGeneralPermissions(switchSettings);
+    const proceed = validateGeneralPermissions(sMSet.switchSettings);
     if (proceed) {
       getTextValue();
       checkIfThereIsData();
@@ -500,7 +535,7 @@ const validateSwitchOnChange = (origin) => {
     checkIfThereIsData();
     return true;
   } else if (origin === "npcCharsSetUp") {
-    const proceed = validateNpcFields(inputData, npcs);
+    const proceed = validateNpcFields(inputData, sMSet.switchSettings.npcs);
     if (proceed) {
       getNpcValues();
       checkIfThereIsData();

@@ -4,7 +4,6 @@ import { checkIfThereIsData } from "../wrapperswitch_config/ws_cf_buildPage.js";
 
 // SET CHANGES TO INPUTS
 const setInputChanges = () => {
-  const inputData = switchSettings.inputData;
   const inputArray = [];
 
   const fieldBoxes = document.querySelectorAll(".inputBox");
@@ -17,7 +16,7 @@ const setInputChanges = () => {
     }
     inputArray.push(inputElement);
   }
-  switchSettings.inputData = inputArray;
+  sMSet.switchSettings.inputData = inputArray;
 };
 
 // REMOVE AN INPUT ITEM
@@ -25,10 +24,10 @@ const removeInputItem = (removeMe, myName) => {
   const makeSure = confirm(`Are you sure you want to remove ${myName}?`);
 
   if (makeSure) {
-    const filteredArray = switchSettings.inputData.filter(
+    const filteredArray = sMSet.switchSettings.inputData.filter(
       (item) => item.id !== removeMe
     );
-    switchSettings.inputData = filteredArray;
+    sMSet.switchSettings.inputData = filteredArray;
     checkIfThereIsData();
   } else {
     return;
@@ -43,11 +42,11 @@ const addNewInput = () => {
     id: "",
     code: "",
     type: "text",
-    order: switchSettings.inputData.length + 1,
+    order: sMSet.switchSettings.inputData.length + 1,
     required: "",
   };
-  const newData = [...switchSettings.inputData, newItem];
-  switchSettings.inputData = newData;
+  const newData = [...sMSet.switchSettings.inputData, newItem];
+  sMSet.switchSettings.inputData = newData;
   checkIfThereIsData();
 };
 
@@ -55,7 +54,7 @@ const addNewInput = () => {
 const switchValues = (e, item) => {
   const changed = e.target.value;
 
-  const inputElement = switchSettings.inputData.find(
+  const inputElement = sMSet.switchSettings.inputData.find(
     (input) => input.id === e.target.parentNode.parentNode.getAttribute("id")
   );
 
@@ -66,7 +65,7 @@ const switchValues = (e, item) => {
     }
 
     if (item === "id") {
-      switchSettings.inputData.map((element) => {
+      sMSet.switchSettings.inputData.map((element) => {
         if (element.id === inputElement.id) {
           element.id = changed;
         }
