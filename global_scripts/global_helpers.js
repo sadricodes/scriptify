@@ -34,4 +34,31 @@ const checkUniqueCodes = (item, array, code) => {
   }
 };
 
-export { makeDropdownItems, clearWarnings, checkUniqueCodes };
+const saveUserData = (module, data) => {
+  const existingData = JSON.parse(localStorage.getItem("sMSet"));
+  if (existingData !== null) {
+    // Item exists in local storage
+    existingData.sadriCodesModules[module] = data;
+    localStorage.setItem("sMSet", JSON.stringify(existingData));
+  } else {
+    // item does not exist in local storage
+    const newData = {
+      sadriCodesModules: {
+        [module]: data,
+      },
+    };
+    localStorage.setItem("sMSet", JSON.stringify(newData));
+  }
+};
+
+const getUserData = () => {
+  // Get user data here
+};
+
+export {
+  makeDropdownItems,
+  clearWarnings,
+  checkUniqueCodes,
+  saveUserData,
+  getUserData,
+};

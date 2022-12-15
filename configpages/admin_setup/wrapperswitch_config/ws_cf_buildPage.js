@@ -13,6 +13,8 @@ import {
   validateNpcFields,
   validateInputFields,
 } from "./ws_cf_validations.js";
+import { saveAdminSettings } from "../global_admin_scripts/useLocalStorage.js";
+import { makeRetrievalButton } from "../global_admin_scripts/global_admin.js";
 
 // MAKE BOX FOR GROUP PERMISSIONS
 const makeGroupBox = (value, source) => {
@@ -608,6 +610,8 @@ const loadSection = () => {
       }
     }
   }
+  makeRetrievalButton();
+  saveAdminSettings();
 };
 
 export {

@@ -1,4 +1,8 @@
-import { makeCode } from "../wrapperswitch_config/ws_cf_makecode.js";
+import { saveUserData } from "../../../global_scripts/global_helpers.js";
+import {
+  getExistingDataFromStorage,
+  makeCode,
+} from "../wrapperswitch_config/ws_cf_makecode.js";
 import {
   newChar,
   saveCharacters,
@@ -28,7 +32,12 @@ const loadSection = () => {
     if (!validateCharacters()) {
       return;
     }
+    saveUserData(pageFrom, sMSet.switchSettings.systemData.memberData);
     console.log("moving from chars");
+  }
+
+  if (pageTo === "characterCode") {
+    getExistingDataFromStorage();
   }
 
   for (const button of allButtons) {

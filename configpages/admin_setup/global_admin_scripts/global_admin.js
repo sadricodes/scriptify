@@ -2,6 +2,8 @@ import { getNpcValues } from "../wrapperswitch_config/ws_cf_npcs.js";
 import { getTextValue } from "../wrapperswitch_config/ws_cf_baseSettings.js";
 import { setInputChanges } from "../wrapperswitch_config/ws_cf_inputs.js";
 import { checkIfThereIsData } from "../wrapperswitch_config/ws_cf_buildPage.js";
+import { getExistingDataFromStorage } from "../../user_setup/wrapperswitch_config/ws_cf_makecode.js";
+import { getAdminSettings } from "./useLocalStorage.js";
 
 // TOGGLE MODULE SET UP
 
@@ -68,14 +70,10 @@ const copyCode = () => {
   }
 };
 
-// WRITE CODE TO THE TEXTAREA
-const writeCode = () => {
-  // GET VALUES FROM TEXT SETTING INPUTS
-  reDraw();
-  // write the json code here
+const makeCode = (fetchedCode) => {
+  console.log("makin code!");
   const destination = document.getElementById("generatedCode");
-  const settingsCode = JSON.stringify(sMSet, null, " ");
-  const codeWrap = document.createElement("script");
+  const settingsCode = JSON.stringify(fetchedCode, null, " ");
   const code = `
 <script>
   
@@ -86,8 +84,49 @@ sMSet.switchSettings.systemData.currentUserGroup = parseInt(sMSet.switchSettings
 sMSet.switchSettings.systemData.memberData = eval(<!-- |field_${sMSet.switchSettings.settings.customFieldVariable}| -->);
     
 </script>`;
-  codeWrap.innerText = code;
   destination.value = code;
 };
 
-export { copyCode, writeCode, reDraw, setModuleToggle, setModuleState };
+// MAKE BUTTON TO GET CODE OUT OF STORAGE
+const makeRetrievalButton = () => {
+  const existingData = JSON.parse(getAdminSettings());
+  const existingButton = document.getElementById("retrieveCode");
+  if (existingData && !existingButton) {
+    const destination = document.querySelector("#codeResult .buttonTabLine");
+    const newButton = document.createElement("button");
+    newButton.addEventListener("click", () => makeCode(existingData));
+    newButton.classList.add("actionButton");
+    newButton.setAttribute("id", "retrieveCode");
+    newButton.innerText = "Get Settings from Last Session";
+    destination.prepend(newButton);
+  }
+};
+
+// WRITE CODE TO THE TEXTAREA
+const writeCode = () => {
+  // GET VALUES FROM TEXT SETTING INPUTS
+  reDraw();
+  // write the json code here
+  const destination = document.getElementById("generatedCode");
+  const settingsCode = JSON.stringify(sMSet, null, " ");
+  const code = `
+<script>
+  
+const sMSet = ${settingsCode}
+
+sMSet.switchSettings.systemData.currentUser = parseInt(sMSet.switchSettings.systemData.currentUserVariable);
+sMSet.switchSettings.systemData.currentUserGroup = parseInt(sMSet.switchSettings.systemData.currentUserGroupVariable); 
+sMSet.switchSettings.systemData.memberData = eval(<!-- |field_${sMSet.switchSettings.settings.customFieldVariable}| -->);
+    
+</script>`;
+  destination.value = code;
+};
+
+export {
+  copyCode,
+  writeCode,
+  reDraw,
+  setModuleToggle,
+  setModuleState,
+  makeRetrievalButton,
+};
