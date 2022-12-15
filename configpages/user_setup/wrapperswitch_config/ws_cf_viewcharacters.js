@@ -1,3 +1,5 @@
+import { deleteChar } from "./ws_cf_managechars.js";
+
 // MAKE INPUTS FOR USER CHARACTER LIST
 const makeCharInputs = (input, char) => {
   const inputWrapper = document.createElement("div");
@@ -29,6 +31,21 @@ const makeCharInputs = (input, char) => {
   return inputWrapper;
 };
 
+// SHOW CHARACTER INFORMATION
+const showChar = () => {
+  const button = window.event.target;
+
+  if (button.innerText === "Edit") {
+    button.innerText = "Hide";
+    button.parentNode.nextSibling.classList.add("showNpcDiv");
+    button.parentNode.nextSibling.classList.remove("hideNpcDiv");
+  } else if (button.innerText === "Hide") {
+    button.innerText = "Edit";
+    button.parentNode.nextSibling.classList.remove("showNpcDiv");
+    button.parentNode.nextSibling.classList.add("hideNpcDiv");
+  }
+};
+
 // MAKE CHARACTER WRAPPER FOR CHARACTER LIST
 const makeCharItem = (char) => {
   const defaultItems = [
@@ -42,10 +59,22 @@ const makeCharItem = (char) => {
   charDiv.classList.add("characterEntry");
   const charHeader = document.createElement("div");
   charHeader.classList.add("settingSectionHeader");
+  const showToggle = document.createElement("button");
+  showToggle.classList.add("actionButton");
+  showToggle.innerText = "Edit";
+  showToggle.addEventListener("click", showChar);
   charHeader.innerText = char.name;
+  charHeader.appendChild(showToggle);
   charDiv.appendChild(charHeader);
   const inputsSection = document.createElement("div");
-  inputsSection.classList.add("npcInputBox", "showNpcDiv");
+  inputsSection.classList.add("npcInputBox", "hideNpcDiv");
+  const deleteSection = document.createElement("div");
+  deleteSection.classList.add("outputs");
+  const deleteButton = document.createElement("button");
+  deleteButton.classList.add("warningButton");
+  deleteButton.innerText = `Delete ${char.name}`;
+  deleteButton.addEventListener("click", deleteChar);
+  deleteSection.appendChild(deleteButton);
   for (const input of sMSet.switchSettings.inputData) {
     const entry = makeCharInputs(input, char);
     inputsSection.appendChild(entry);
@@ -59,20 +88,32 @@ const makeCharItem = (char) => {
     }
   }
   charDiv.appendChild(inputsSection);
+  charDiv.appendChild(deleteSection);
   return charDiv;
 };
 
 // GET ALL USER CHARACTERS AND APPEND TO DESTINATION
 const getCharacters = () => {
-  const memberChars = sMSet.switchSettings.systemData.memberData.sort(
-    (a, b) => a.order - b.order
-  );
   const destination = document.getElementById("userCharList");
   destination.innerHTML = "";
 
-  for (const char of memberChars) {
-    const item = makeCharItem(char);
-    destination.appendChild(item);
+  if (
+    sMSet.switchSettings.systemData.memberData &&
+    sMSet.switchSettings.systemData.memberData.length > 0
+  ) {
+    const memberChars = sMSet.switchSettings.systemData.memberData.sort(
+      (a, b) => a.order - b.order
+    );
+
+    for (const char of memberChars) {
+      const item = makeCharItem(char);
+      destination.appendChild(item);
+    }
+  } else {
+    const notice = document.createElement("span");
+    notice.innerText =
+      "You do not have any characters saved yet. Click 'Add Character' to begin!";
+    destination.appendChild(notice);
   }
 };
 

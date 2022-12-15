@@ -1,5 +1,6 @@
 import { makeCode } from "../wrapperswitch_config/ws_cf_makecode.js";
 import {
+  newChar,
   saveCharacters,
   validateCharacters,
 } from "../wrapperswitch_config/ws_cf_managechars.js";
@@ -24,7 +25,9 @@ const loadSection = () => {
     // save user character info
     saveCharacters();
     // run user character validations
-    validateCharacters();
+    if (!validateCharacters()) {
+      return;
+    }
     console.log("moving from chars");
   }
 
@@ -59,3 +62,4 @@ const loadSection = () => {
 
 window.loadSection = loadSection;
 window.makeCode = makeCode;
+window.newChar = newChar;

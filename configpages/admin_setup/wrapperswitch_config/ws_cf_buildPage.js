@@ -545,9 +545,9 @@ const validateSwitchOnChange = (origin) => {
     checkIfThereIsData();
     return true;
   } else if (origin === "npcCharsSetUp") {
+    getNpcValues();
     const proceed = validateNpcFields(inputData, sMSet.switchSettings.npcs);
     if (proceed) {
-      getNpcValues();
       checkIfThereIsData();
       return true;
     } else {

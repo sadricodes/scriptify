@@ -1,14 +1,7 @@
-// CLEAR WARNINGS
-const clearWarnings = () => {
-  const allErrorBoxes = document.querySelectorAll(".warningBox");
-  const allErrorDivs = document.querySelectorAll(".errorState");
-  for (const box of allErrorBoxes) {
-    box.innerHTML = "";
-  }
-  for (const div of allErrorDivs) {
-    div.classList.remove("errorState");
-  }
-};
+import {
+  checkUniqueCodes,
+  clearWarnings,
+} from "../../../global_scripts/global_helpers.js";
 
 // CHECK ALL NPC FIELD FORMS ARE COMPLETED
 const validateNpcFields = () => {
@@ -27,6 +20,24 @@ const validateNpcFields = () => {
       input.parentNode.appendChild(errorBox);
       input.parentNode.parentNode.parentNode.classList.add("errorState");
       proceed = false;
+    }
+
+    if (item === "shortcode") {
+      //console.log(item, input, input.value);
+      const noDupes = checkUniqueCodes(
+        input.value,
+        sMSet.switchSettings.npcs,
+        item
+      );
+      if (!noDupes.proceed) {
+        proceed = false;
+        const errorBox = document.createElement("div");
+        errorBox.innerText = `${input.value} is being used for more than one npc`;
+        errorBox.classList.add("warningBox");
+        input.parentNode.appendChild(errorBox);
+        input.parentNode.parentNode.parentNode.classList.add("errorState");
+        proceed = false;
+      }
     }
   }
 
@@ -56,6 +67,22 @@ const validateInputFields = () => {
       field.parentNode.appendChild(warning);
       field.parentNode.parentNode.parentNode.classList.add("errorState");
       proceed = false;
+    }
+
+    if (fieldType === "code" || fieldType === "id") {
+      const noDupes = checkUniqueCodes(
+        field.value,
+        sMSet.switchSettings.inputData,
+        fieldType
+      );
+      if (!noDupes.proceed) {
+        const warning = document.createElement("div");
+        warning.innerText = `${field.value} is being used more than once`;
+        warning.classList.add("warningBox");
+        field.parentNode.appendChild(warning);
+        field.parentNode.parentNode.parentNode.classList.add("errorState");
+        proceed = false;
+      }
     }
   }
 
@@ -130,4 +157,5 @@ export {
   validateGeneralPermissions,
   validateInputFields,
   validateNpcFields,
+  clearWarnings,
 };

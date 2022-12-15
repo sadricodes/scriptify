@@ -74,12 +74,12 @@ const switchValues = (e, item) => {
 
     if (item === "code") {
       const newList = [];
-      for (let npc of npcs) {
+      for (let npc of sMSet.switchSettings.npcs) {
         const newChar = { ...npc, [changed]: npc[inputElement.code] };
         delete newChar[inputElement.code];
         newList.push(newChar);
       }
-      npcs = newList;
+      sMSet.switchSettings.npcs = newList;
     }
   }
 

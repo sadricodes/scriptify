@@ -14,4 +14,24 @@ const makeDropdownItems = (defaultText, items, container) => {
   }
 };
 
-export { makeDropdownItems };
+const clearWarnings = () => {
+  const allErrorBoxes = document.querySelectorAll(".warningBox");
+  const allErrorDivs = document.querySelectorAll(".errorState");
+  for (const box of allErrorBoxes) {
+    box.innerHTML = "";
+  }
+  for (const div of allErrorDivs) {
+    div.classList.remove("errorState");
+  }
+};
+
+const checkUniqueCodes = (item, array, code) => {
+  const foundItems = array.filter((char) => item == char[code]);
+  if (foundItems.length > 1) {
+    return { proceed: false, text: `${item} is being used more than once` };
+  } else {
+    return { proceed: true };
+  }
+};
+
+export { makeDropdownItems, clearWarnings, checkUniqueCodes };

@@ -28,7 +28,8 @@
   --fieldTitleText: rgb(97, 96, 96);
 }
 
-.sectionNpcEntry .outputs {
+.sectionNpcEntry .outputs,
+.characterEntry .outputs {
   padding: 0 10px;
 }
 
@@ -191,6 +192,10 @@ textarea {
   padding: 0;
 }
 
+#userCharList {
+  flex-basis: 100%;
+}
+
 #inputEntryBox .inputBox,
 .npcInputBox {
   flex-grow: 1;
@@ -319,9 +324,7 @@ textarea {
   align-items: center;
 }
 
-#inputEntryBox .errorState,
-#npcEntries .errorState,
-#basicSettings .errorState {
+.errorState {
   padding: 10px;
   border: 2px solid red;
   border-radius: 10px;
