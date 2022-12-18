@@ -1,0 +1,94 @@
+<script>
+
+  const sMSet = {
+    "switchSettings": {
+      "currentlyEnabled": true,
+      "languageStrings": {
+        "sectionTitle": "Set Character Information",
+        "saveCharacterText": "Select A Saved Character",
+        "savedCharacterDefault": "-- SELECT A CHARACTER --",
+        "selectYourCharsText": "Select from Your Characters",
+        "selectNpcCharsText": "Select from Global NPCs",
+        "clearSelectButton": "Clear Selections"
+      },
+      "permissions": {
+        "groupsCanUse": [
+        ],
+        "groupsCanNotUse": [
+        ],
+        "memberCanUse": [
+        ],
+        "memberCanNotUse": [
+        ]
+      },
+      "settings": {
+        "typeOptions": [
+          "text",
+          "image"
+        ],
+        "customFieldVariable": 0,
+        "allowUserChars": true,
+        "npcChars": true,
+        "showSavedDrop": true,
+        "showInputEntry": true
+      },
+      "systemData": {
+        "currentUserVariable": "<!-- |id| -->",
+        "currentUserGroupVariable": "<!-- |g_id| -->",
+        "memberData": [
+        ]
+      },
+      "inputData": [
+        {
+          "name": "Character Name",
+          "id": "characterName",
+          "code": "name",
+          "type": "text",
+          "order": "1",
+          "required": "true"
+        },
+        {
+          "name": "Avatar Link",
+          "id": "characterAv",
+          "code": "avatar",
+          "type": "image",
+          "order": "2",
+          "required": "false"
+        },
+        {
+          "name": "Character Status",
+          "id": "charStat",
+          "code": "sts",
+          "type": "text",
+          "order": "3",
+          "required": "false"
+        }
+      ],
+      "npcs": [
+        {
+          "name": "Example NPC",
+          "avatar": "",
+          "shortcode": "npc-exa",
+          "allowAll": "true",
+          "exceptGroups": [
+
+          ],
+          "exceptMembers": [
+          ],
+          "overrideMembers": [
+          ],
+          "type": "npc",
+          "order": "1",
+          "sts": "",
+          "toggleOpen": true,
+          "desc": "An example NPC"
+        }
+      ]
+    }
+  }
+
+  sMSet.switchSettings.systemData.currentUser = parseInt(sMSet.switchSettings.systemData.currentUserVariable);
+  sMSet.switchSettings.systemData.currentUserGroup = parseInt(sMSet.switchSettings.systemData.currentUserGroupVariable);
+  sMSet.switchSettings.systemData.memberData = eval(< !-- | field_114 | -->);
+
+</script>
