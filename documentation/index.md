@@ -33,8 +33,14 @@ This is where we wil describe how to install the main script.
      ![Configure your webpage settings here](./doc_images/makeglobalpage.png)
 
    - In a different tab, load the latest [Settings Template](../templates/settingsTemplate.html) here on GitHub.
+
    - Copy the raw contents of that file by clicking the copy icon to the left of the trashcan icon
      ![Copy the entire code to your clipboard using the copy icon](./doc_images/githubcopy.png)
+
+   - Paste all of the copied code directly into the 'Contents' box for your new webpage.
+     ![The webpage contents box with all of the copied code](./doc_images/codepage.png)
+
+   - Save your new webpage by clicking "Create Webpage" at the bottom of the screen.
 
 - ### Create custom webpage for admin settings
 
