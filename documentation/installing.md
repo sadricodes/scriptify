@@ -6,6 +6,8 @@ There are three basic steps you need to take to install Scriptify:
 - [Create an admin configuration page](#create-custom-webpage-for-admin-settings)
 - [Create a user configuration page](#create-custom-webpage-for-user-settings) (if required)
 
+---
+
 ## Install Scriptify codes to your skin wrappers
 
 - YouTube guide for this step
@@ -77,6 +79,8 @@ There are three basic steps you need to take to install Scriptify:
 
 5. ### Repeat steps 2-4 for the wrappers of any skins/themes you would like to add Scriptify functionality to.
 
+---
+
 ## Create custom webpage for admin settings
 
 - YouTube guide for this step
@@ -105,6 +109,8 @@ There are three basic steps you need to take to install Scriptify:
   Note that there aren't any permissions checks on the administrative page - but saving new configuration settings _does require_ ACP access.
 
 - To begin customising the system and enabling modules, see the Admin Guide for more information.
+
+---
 
 ## Create custom webpage for user settings
 
