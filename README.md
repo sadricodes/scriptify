@@ -10,7 +10,9 @@ It allows users to enable and disable additional functions to be applied on the 
 
 - December 18th, 2022: Installation documentation is now available for review. We would love to get your feedback on whether you find the current documentation easy to follow! Required scripts are not yet publicly hosted and Scriptify is not yet ready to be released.
 
-Please support Scriptify by Watching and Starring this project on GitHub.
+Please support Scriptify by following Sadrienne on [Ko-Fi](https://ko-fi.com/sadricodes), and Watching and Following this GitHub repository.
+
+Screenshot and video development updates are also available via [Ko-Fi](https://ko-fi.com/sadricodes)! If you love the project, and have the desire and the means to donate - the Ko-Fi profile has options to donate an amount of your choosing.
 
 ## System
 
@@ -41,13 +43,15 @@ Projects derived from Scriptify, using all or any part of its original code, may
 
 ## Help & Support
 
-Please use te [Issues](https://github.com/sadricodes/scriptify/issues) tab to:
+Please use the [Issues](https://github.com/sadricodes/scriptify/issues) tab to:
 
 - Report bugs
 - Request support
 - Suggest features
 
 Tag new issues with the most appropriate labels so they are easy to find and address.
+
+You can also communicate with Sadrienne, get previews and development new at [Ko-Fi](https://ko-fi.com/sadricodes)
 
 Scriptify is developed entirely by Sadrienne during hobby time. While all efforts will be made to resolve support issues, she is but one person who can only do so much. Faster help with things like installation, code modification and other issues may be gained at Jcink-specific communities such as the [JCC Discord server](https://discord.gg/EZETyUc).
 
