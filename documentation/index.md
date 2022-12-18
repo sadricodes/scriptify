@@ -29,6 +29,13 @@ This is where we wil describe how to install the main script.
      _IMPORTANT:_ You will need to have webpages turned _online_ and _enable include keys_.
      ![The 'Extra Settings' section contains toggles for the online and enable include keys settings](./doc_images/extrasettingsimportant.png)
 
+   - Give your new page a Title, and an Include Key. Make sure that "Allow Use" in board wrappers is set to "Yes".
+     ![Configure your webpage settings here](./doc_images/makeglobalpage.png)
+
+   - In a different tab, load the latest [Settings Template](../templates/settingsTemplate.html) here on GitHub.
+   - Copy the raw contents of that file by clicking the copy icon to the left of the trashcan icon
+     ![Copy the entire code to your clipboard using the copy icon](./doc_images/githubcopy.png)
+
 - ### Create custom webpage for admin settings
 
   - YouTube guide for this step
