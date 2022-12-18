@@ -121,6 +121,8 @@ const writeCode = () => {
 const sMSet = ${settingsCode}
 
 sMSet.systemData.currentUser = parseInt(<!-- |id| -->);
+sMSet.systemData.inputCode = "<!-- |input_CODE| -->";
+sMSet.systemData.inputAct = "<!-- |input_act| -->";
 sMSet.systemData.currentUserGroup = parseInt("<!-- |g_id| -->");
 sMSet.switchSettings.systemData.memberData = eval(<!-- |field_${sMSet.switchSettings.settings.customFieldVariable}| -->);
     

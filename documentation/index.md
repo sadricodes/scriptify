@@ -82,7 +82,13 @@ There are three basic steps you need to take to install Scriptify:
 
   ![Board wraper edit page showing where to put the Scriptify code link](./doc_images/scriptCodeLink.png)
 
-4. ### Repeat steps 2-3 for the wrappers of any skins/themes you would like to add Scriptify functionality to.
+4. ### Add the Scriptify CSS to the wrappers
+
+- Still on the board wrapper edit page, paste the following link BELOW the <% CSS %> key in the <head> section of the wrapper.
+
+  `<link rel='stylesheet/css' href="https://raw.githubusercontent.com/sadricodes/jcink_wrapperswitch/main/configpages/admin_setup/jcinkSwitch.css">`
+
+5. ### Repeat steps 2-4 for the wrappers of any skins/themes you would like to add Scriptify functionality to.
 
 ## Create custom webpage for admin settings
 

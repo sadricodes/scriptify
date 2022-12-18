@@ -10,14 +10,18 @@ const runWrapperSwitch = () => {
   // CHECK AND APPLY BOXES TO POST BOX IF APPLICABLE
   if (accessAllowed) {
     if (
-      inputCode === "00" ||
-      inputCode === "02" ||
-      inputCode === "08" ||
-      inputCode === "03"
+      sMSet.systemData.inputCode === "00" ||
+      sMSet.systemData.inputCode === "02" ||
+      sMSet.systemData.inputCode === "08" ||
+      sMSet.systemData.inputCode === "03"
     ) {
       setElementsForPostScreen();
     }
-    if (inputCode === "02" || inputCode === "08" || inputCode === "03") {
+    if (
+      sMSet.systemData.inputCode === "02" ||
+      sMSet.systemData.inputCode === "08" ||
+      sMSet.systemData.inputCode === "03"
+    ) {
       postReviewSwitch();
     }
   }
