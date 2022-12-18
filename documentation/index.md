@@ -19,6 +19,14 @@ It allows users to enable and disable additional functions to be applied on the 
 
 This is where we wil describe how to install the main script.
 
+1. #### In your Jcink Forum Admin CP, create a new webpage
+
+   - Select "Webpage Maker" from the "Skins & Templates" section of your Admin sidebar.
+     ![The 'Webpage Maker' link in the administrative sidebar](./doc_images/gettowebpages.png)
+   - Select "Create new webpage" from the bar toward the bottom of the page.
+
+     _IMPORTANT:_ You will need to have webpages turned _online_ and _enable include keys_.
+
 - ### Create custom webpage for admin settings
 
   - YouTube guide for this step
