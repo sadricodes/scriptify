@@ -11,7 +11,7 @@ It allows users to enable and disable additional functions to be applied on the 
 - ### Get Started with Scriptify
 
   - [Installing Scriptify](./installing.md)
-  - [Creating an Admin config page](./installing.md)
+  - [Creating the Admin config page](./installing.md)
   - [Creating the User config page](./installing.md)
 
 - ### Using Scriptify
@@ -27,4 +27,11 @@ It allows users to enable and disable additional functions to be applied on the 
   - [Guide for Admins](./moduleGuides/wrapperSwitch/wrapperSwitchAdmin.md)
   - [Guide for Users](./moduleGuides/wrapperSwitch/wrapperSwitchUser.md)
 
+## Usage
+
+This code is provided free of charge to all Jcink users.
+
 ## Resources
+
+- [Jcink Skinning Guide](https://jcink.com/main/wiki/jfb-skinning)
+- [Jcink Support Forum](https://forum.jcink.com/index.php?)
