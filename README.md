@@ -72,7 +72,7 @@ Please use the [Issues](https://github.com/sadricodes/scriptify/issues) tab to:
 
 Tag new issues with the most appropriate labels so they are easy to find and address.
 
-You can also communicate with Sadrienne, get previews and development new at [Ko-Fi](https://ko-fi.com/sadricodes)
+You can also communicate with Sadrienne, get previews and development news at [Ko-Fi](https://ko-fi.com/sadricodes).
 
 Scriptify is developed entirely by Sadrienne during hobby time. While all efforts will be made to resolve support issues, she is but one person who can only do so much. Faster help with things like installation, code modification and other issues may be gained at Jcink-specific communities such as the [JCC Discord server](https://discord.gg/EZETyUc).
 
