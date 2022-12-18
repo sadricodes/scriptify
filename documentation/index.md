@@ -20,6 +20,8 @@ It allows users to enable and disable additional functions to be applied on the 
 
 ## Modules
 
+[Available Modules](./moduleList.md)
+
 - ### Post Wrapper Switch
   - [About Post Wrapper Switch](./moduleGuides/wrapperSwitch/wrapperSwitch.md)
   - [Guide for Admins](./moduleGuides/wrapperSwitch/wrapperSwitchAdmin.md)
