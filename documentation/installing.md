@@ -6,6 +6,8 @@ There are three basic steps you need to take to install Scriptify:
 - [Create an admin configuration page](#create-custom-webpage-for-admin-settings)
 - [Create a user configuration page](#create-custom-webpage-for-user-settings) (if required)
 
+The install guides start with a number of pictures and description for guidance. As some of the processes required to set up Scriptify are repetitive, the processes are described in detail the first time they occur (eg. creating a Jcink webpage). We hope that you find the detailed descriptions useful not just in the first instance, but every time that process (making a Jcink webpage, finding a page link) is required.
+
 ---
 
 ## Install Scriptify codes to your skin wrappers
