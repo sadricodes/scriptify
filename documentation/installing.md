@@ -1,7 +1,16 @@
 # Installating Scriptify
 
+---
+
+---
+
 **18th December, 2022: THIS INSTALLATION GUIDE IS NOT FINAL**
+
 This version of the documentation has been released for general review. The script and CSS links referenced below are not functional, and this project is not ready for production. Please come back in the future to install Scriptify!
+
+---
+
+---
 
 There are three basic steps you need to take to install Scriptify:
 
