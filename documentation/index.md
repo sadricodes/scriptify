@@ -21,6 +21,8 @@ It allows users to enable and disable additional functions to be applied on the 
 ## Modules
 
 - ### Post Wrapper Switch
-  - [Post Wrapper Switch Guide](./wrapperSwitch.md)
+  - [About Post Wrapper Switch](./moduleGuides/wrapperSwitch/wrapperSwitch.md)
+  - [Guide for Admins](./moduleGuides/wrapperSwitch/wrapperSwitchAdmin.md)
+  - [Guide for Users](./moduleGuides/wrapperSwitch/wrapperSwitchUser.md)
 
 ## Resources
