@@ -1,32 +1,24 @@
 # Installing Scriptify
 
----
-
----
-
 **18th December, 2022: THIS INSTALLATION GUIDE IS NOT FINAL**
 
-This version of the documentation has been released for general review. The script and CSS links referenced below are not functional, and this project is not ready for production. Please come back in the future to install Scriptify!
+> This version of the documentation has been released for general review. The script and CSS links referenced below are not functional, and this project is not ready for production. Please come back in the future to install Scriptify!
 
----
-
----
-
-There are three basic steps you need to take to install Scriptify:
+There are three steps you need to take to install Scriptify:
 
 - [Install the Scriptify codes to your wrappers](#install-scriptify-codes-to-your-skin-wrappers)
 - [Create an admin configuration page](#create-custom-webpage-for-admin-settings)
 - [Create a user configuration page](#create-custom-webpage-for-user-settings) (if required)
 
-The install guides start with a number of pictures and description for guidance. As some of the processes required to set up Scriptify are repetitive, the processes are described in detail the first time they occur (eg. creating a Jcink webpage). We hope that you find the detailed descriptions useful not just in the first instance, but every time that process (making a Jcink webpage, finding a page link) is required.
+> The install guides start with a number of pictures and description for guidance. As some of the processes required to set up Scriptify are repetitive, the processes are described in detail the first time they occur (eg. creating a Jcink webpage). We hope that you find the detailed descriptions useful not just in the first instance, but every time that process (making a Jcink webpage, finding a page link) is required.
 
-The official documentation for the Jcink Webpage maker is available on the Jcink site
-
-- [Webpage Maker documentation (Jcink)](https://jcink.com/main/wiki/jfb-skinning-webpage-maker)
+> The official documentation for the Jcink Webpage maker is available on the Jcink site
+>
+> - [Webpage Maker documentation (Jcink)](https://jcink.com/main/wiki/jfb-skinning-webpage-maker)
 
 ---
 
-## Install Scriptify codes to your skin wrappers
+## :one: Install Scriptify codes to your skin wrappers
 
 - YouTube guide for this step
 
@@ -97,7 +89,7 @@ The official documentation for the Jcink Webpage maker is available on the Jcink
 
 ---
 
-## Create custom webpage for admin settings
+## :two: Create custom webpage for admin settings
 
 - YouTube guide for this step
 
@@ -128,7 +120,7 @@ The official documentation for the Jcink Webpage maker is available on the Jcink
 
 ---
 
-## Create custom webpage for user settings
+## :three: Create custom webpage for user settings
 
     YouTube guide for this step
 
