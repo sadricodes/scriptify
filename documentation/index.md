@@ -15,13 +15,19 @@ It allows users to enable and disable additional functions to be applied on the 
 
 - ### Install Scriptify to a custom webpage
 
-  This is where we wil describe how to install the main script.
+  - YouTube guide for this step
+
+This is where we wil describe how to install the main script.
 
 - ### Create custom webpage for admin settings
+
+  - YouTube guide for this step
 
   This is where we will describe creating the admin page.
 
 - ### Create custom webpage for user settings
+
+  - YouTube guide for this step
 
   This is where we will describe setting up the user page.
 
@@ -29,18 +35,28 @@ It allows users to enable and disable additional functions to be applied on the 
 
 - ### Generating settings
 
+  - YouTube guide for this step
+
   This is where we will describe how to create a settings code
 
 - ### Saving settings
+
+  - YouTube guide for this step
+
   This is where we will describe saving the settings in the ACP
 
 ## Member Guide
 
 - ### Generating settings
 
+  - YouTube guide for this step
+
   This is where we will describe how to create settings as a user
 
 - ### Saving settings
+
+  - YouTube guide for this step
+
   This is where we will describe how to save settings as a user
 
 ## Resources
