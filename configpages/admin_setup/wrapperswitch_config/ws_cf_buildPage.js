@@ -14,7 +14,10 @@ import {
   validateInputFields,
 } from "./ws_cf_validations.js";
 import { saveAdminSettings } from "../global_admin_scripts/useLocalStorage.js";
-import { makeRetrievalButton } from "../global_admin_scripts/global_admin.js";
+import {
+  clearCodeAdmin,
+  makeRetrievalButton,
+} from "../global_admin_scripts/global_admin.js";
 
 // MAKE BOX FOR GROUP PERMISSIONS
 const makeGroupBox = (value, source) => {
@@ -581,6 +584,10 @@ const loadSection = () => {
 
   if (moduleName === "switch") {
     proceed = validateSwitchOnChange(origin);
+  }
+
+  if (section === "codeResult") {
+    clearCodeAdmin();
   }
 
   if (proceed) {

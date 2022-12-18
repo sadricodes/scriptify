@@ -70,8 +70,14 @@ const copyCode = () => {
   }
 };
 
+// CLEAR CODE ON PAGE SWITCH
+const clearCodeAdmin = () => {
+  const destination = document.getElementById("generatedCode");
+  destination.value = "";
+};
+
+// WRITE CODE TO TEXT AREA
 const makeCode = (fetchedCode) => {
-  console.log("makin code!");
   const destination = document.getElementById("generatedCode");
   const settingsCode = JSON.stringify(fetchedCode, null, " ");
   const code = `
@@ -129,4 +135,5 @@ export {
   setModuleToggle,
   setModuleState,
   makeRetrievalButton,
+  clearCodeAdmin,
 };

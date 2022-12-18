@@ -1,3 +1,9 @@
+// CLEAR CODE
+const clearCode = () => {
+  const destination = document.getElementById("generatedCode");
+  destination.value = "";
+};
+
 // SEE IF CODE EXISTS IN STORAGE
 const getExistingDataFromStorage = () => {
   const savedData = JSON.parse(localStorage.getItem("sMSet"));
@@ -34,4 +40,4 @@ const makeCode = () => {
   destination.value = settingsCode;
 };
 
-export { makeCode, getExistingDataFromStorage };
+export { makeCode, getExistingDataFromStorage, clearCode };

@@ -1,5 +1,6 @@
 import { saveUserData } from "../../../global_scripts/global_helpers.js";
 import {
+  clearCode,
   getExistingDataFromStorage,
   makeCode,
 } from "../wrapperswitch_config/ws_cf_makecode.js";
@@ -33,11 +34,15 @@ const loadSection = () => {
       return;
     }
     saveUserData(pageFrom, sMSet.switchSettings.systemData.memberData);
-    console.log("moving from chars");
   }
 
   if (pageTo === "characterCode") {
     getExistingDataFromStorage();
+  }
+
+  if (pageTo === "characterCode") {
+    // clear code for reloading
+    clearCode();
   }
 
   for (const button of allButtons) {
