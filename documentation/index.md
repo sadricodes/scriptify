@@ -19,11 +19,11 @@ There are three basic steps you need to take to install Scriptify:
 - Create an admin configuration page
 - Create a user configuration page (if required)
 
-- ### Install Scriptify codes to your skin wrappers
+## Install Scriptify codes to your skin wrappers
 
-  - YouTube guide for this step
+- YouTube guide for this step
 
-- 1. #### In your Jcink Forum Admin CP, create a new webpage
+- 1. ### In your Jcink Forum Admin CP, create a new webpage
 
   - Select "Webpage Maker" from the "Skins & Templates" section of your Admin sidebar.
     ![The 'Webpage Maker' link in the administrative sidebar](./doc_images/gettowebpages.png)
@@ -46,7 +46,7 @@ There are three basic steps you need to take to install Scriptify:
 
   - Save your new webpage by clicking "Create Webpage" at the bottom of the screen.
 
-- 2. #### Get the page include key, and add it to your board wrappers
+- 2. ### Get the page include key, and add it to your board wrappers
 
   - Find your new webpage in the list of custom webpages
     ![Your new page information in the list of custom webpages](./doc_images/newwebpagelink.png)
@@ -62,7 +62,7 @@ There are three basic steps you need to take to install Scriptify:
   - Add the webpage includes key inside the <head> element of the wrappers, BELOW the <% JAVASCRIPT %> key
     ![Board wrapper edit page showing where to put the webpage includes key](./doc_images/addScriptifyIncludes.png)
 
-- 3. #### Add the Scriptify CDN link to the bottom of your board wrappers
+- 3. ### Add the Scriptify CDN link to the bottom of your board wrappers
 
   - While still editing the board wrapper, scroll to the bottom of the wrapper code and paste the Scriptify code link directly before the </body> tag
 
@@ -72,15 +72,15 @@ There are three basic steps you need to take to install Scriptify:
 
   ![Board wraper edit page showing where to put the Scriptify code link](./doc_images/scriptCodeLink.png)
 
-- 4. #### Repeat steps 2-3 for the wrappers of any skins/themes you would like to add Scriptify functionality to.
+- 4. ### Repeat steps 2-3 for the wrappers of any skins/themes you would like to add Scriptify functionality to.
 
-- ### Create custom webpage for admin settings
+## Create custom webpage for admin settings
 
-  - YouTube guide for this step
+- YouTube guide for this step
 
-  This is where we will describe creating the admin page.
+This is where we will describe creating the admin page.
 
-- ### Create custom webpage for user settings
+- ## Create custom webpage for user settings
 
   - YouTube guide for this step
 
