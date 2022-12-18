@@ -6,6 +6,12 @@ Scriptify by SadriCodes is a user-friendly JavaScript plugin system for administ
 
 It allows users to enable and disable additional functions to be applied on the front end, and configuration pages for both admin and member use.
 
+## Latest News
+
+- December 18th, 2022: Installation documentation is now available for review. We would love to get your feedback on whether you find the current documentation easy to follow! Required scripts are not yet publicly hosted and Scriptify is not yet ready to be released.
+
+Please support Scriptify by Watching and Starring this project on GitHub.
+
 ## System
 
 - ### Get Started with Scriptify
