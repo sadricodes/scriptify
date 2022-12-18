@@ -29,7 +29,21 @@ It allows users to enable and disable additional functions to be applied on the 
 
 ## Usage
 
-This code is provided free of charge to all Jcink users.
+This project is provided free of charge to all Jcink users. Users are free to fork and develop their own versions of Scriptify. Users may create modified versions of Scriptify for their own use, or to release as _free resources_ for the wider Jcink community.
+
+Projects derived from Scriptify, using all or any part of its original code, may _not_ be sold. Developers releasing their own modified versions may include options for users to pay if they choose, but the _fully featured_ version of the project _must be available without cost_.
+
+## Help & Support
+
+Please use te [Issues](https://github.com/sadricodes/scriptify/issues) tab to:
+
+- Report bugs
+- Request support
+- Suggest features
+
+Tag new issues with the most appropriate labels so they are easy to find and address.
+
+Scriptify is developed entirely by Sadrienne during hobby time. While all efforts will be made to resolve support issues, she is but one person who can only do so much. Faster help with things like installation, code modification and other issues may be gained at Jcink-specific communities such as the [JCC Discord server](https://discord.gg/EZETyUc).
 
 ## Resources
 
