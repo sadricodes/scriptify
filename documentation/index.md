@@ -6,6 +6,13 @@ Scriptify by SadriCodes is a user-friendly JavaScript plugin system for administ
 
 It allows users to enable and disable additional functions to be applied on the front end, and configuration pages for both admin and member use.
 
+## System
+
+- ### Get Started with Scriptify
+  - [Installing Scriptify](./wrapperSwitch.md)
+  - [Creating an Admin config page](./wrapperSwitch.md)
+  - [Creating the User config page](./wrapperSwitch.md)
+
 ## Modules
 
 - ### Post Wrapper Switch

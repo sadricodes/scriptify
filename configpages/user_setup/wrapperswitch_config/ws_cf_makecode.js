@@ -13,8 +13,9 @@ const getExistingDataFromStorage = () => {
 
     if (switchData.length > 0 && !existingButton) {
       const buttonDestination = document.querySelector(
-        "#characterCode .buttonTabLine"
+        "#characterCode div.buttonTabLine"
       );
+      console.log(buttonDestination);
       const newButton = document.createElement("button");
       newButton.innerText = "Retrieve from Storage";
       newButton.setAttribute("id", "getCharCode");
@@ -23,10 +24,9 @@ const getExistingDataFromStorage = () => {
         const destination = document.getElementById("generatedCode");
         const switchData = sMSet.switchSettings.systemData.memberData;
         const settingsCode = JSON.stringify(switchData, null, " ");
-
         destination.value = settingsCode;
       });
-      buttonDestination.prepend(newButton);
+      buttonDestination?.prepend(newButton);
     }
   }
 };
