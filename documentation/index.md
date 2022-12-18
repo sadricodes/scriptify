@@ -94,7 +94,16 @@ There are three basic steps you need to take to install Scriptify:
 
 - YouTube guide for this step
 
-This is where we will describe creating the admin page.
+1. ### Create a new webpage and give it the name "Admin Settings".
+
+- Follow the steps to create another new webpage, and call this one "Admin Settings.
+  ![Create a new webpage for the admin settings](./doc_images/adminSettingstat.png)
+
+2. ### Paste the admin settings template code into the contents box, and save your webpage
+
+- View the code for the latest [Admin Template](../templates/adminConfigTemplate.html) and copy it by clicking the copy icon to the left of the trash can
+
+- Paste the copied code into the "Contents" section of the webpage you are creating. Save the webpage by clicking "Create Webpage".
 
 - ## Create custom webpage for user settings
 
