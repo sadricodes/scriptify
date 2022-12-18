@@ -16,15 +16,15 @@ Screenshot and video development updates are also available via [Ko-Fi](https://
 
 ## :rainbow: Introduction
 
-Scriptify by SadriCodes is a user-friendly JavaScript plugin system for administrators of Jcink forum websites.
+    Scriptify by SadriCodes is a user-friendly JavaScript plugin system for administrators of Jcink forum websites.
 
-**:cold_sweat: Not a confident coder? No problem! :sunglasses:**
+    **:cold_sweat: Not a confident coder? No problem! :sunglasses:**
 
-Enable and configure Scriptify modules as easily as clicking a few buttons and saving the code in your Admin Control Panel! Designed for non-coders, dedicated to providing helpful documentation.
+    Enable and configure Scriptify modules as easily as clicking a few buttons and saving the code in your Admin Control Panel! Designed for non-coders, dedicated to providing helpful documentation.
 
-**:hammer_and_wrench: Free to use, free to build on :building_construction:**
+    **:hammer_and_wrench: Free to use, free to build on :building_construction:**
 
-Scriptify will never be hidden behind a paywall. All features will _always_ be available for public use. We believe that free resources for Jcink users enrich our community, and that's why we're allowing _anyone_ to build on this code! So long as the end products are always free, like Scriptify itself!
+    Scriptify will never be hidden behind a paywall. All features will _always_ be available for public use. We believe that free resources for Jcink users enrich our community, and that's why we're allowing _anyone_ to build on this code! So long as the end products are always free, like Scriptify itself!
 
 ## :mega: Latest News
 
