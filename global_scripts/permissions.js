@@ -1,15 +1,15 @@
 const checkPerms = (moduleSettings) => {
   const groupCan = moduleSettings.groupsCanUse.includes(
-    sMSet.switchSettings.systemData.currentUserGroup
+    sMSet.systemData.currentUserGroup
   );
   const groupCanNot = moduleSettings.groupsCanNotUse.includes(
-    sMSet.switchSettings.systemData.currentUserGroup
+    sMSet.systemData.currentUserGroup
   );
   const memberCan = moduleSettings.memberCanUse.includes(
-    sMSet.switchSettings.systemData.currentUser
+    sMSet.systemData.currentUser
   );
   const memberCanNot = moduleSettings.memberCanNotUse.includes(
-    sMSet.switchSettings.systemData.currentUser
+    sMSet.systemData.currentUser
   );
 
   if (memberCanNot) {

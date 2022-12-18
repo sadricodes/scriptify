@@ -4,6 +4,7 @@ const settingsFromSite = false;
 const inputDataFromSite = false;
 
 const sMSet = {
+  systemData: {},
   switchSettings: {
     currentlyEnabled: true,
     languageStrings: {
@@ -29,8 +30,6 @@ const sMSet = {
       showInputEntry: true,
     },
     systemData: {
-      currentUserVariable: `<!-- |id| -->`,
-      currentUserGroupVariable: `<!-- |g_id| -->`,
       memberData: [
         {
           name: "Merlwyb",
@@ -130,3 +129,5 @@ const sMSet = {
     ],
   },
 };
+
+console.log(String(sMSet));

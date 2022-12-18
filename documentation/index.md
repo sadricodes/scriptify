@@ -8,7 +8,8 @@ It allows users to enable and disable additional functions to be applied on the 
 
 ## Modules
 
-- Post Wrapper Switch
+- ### Post Wrapper Switch
+  - [Post Wrapper Switch Guide](./wrapperSwitch.md)
 
 ## Installation
 
@@ -36,6 +37,10 @@ It allows users to enable and disable additional functions to be applied on the 
 ## Member Guide
 
 - ### Generating settings
+
   This is where we will describe how to create settings as a user
+
+- ### Saving settings
+  This is where we will describe how to save settings as a user
 
 ## Resources

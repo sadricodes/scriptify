@@ -85,8 +85,8 @@ const makeCode = (fetchedCode) => {
   
 const sMSet = ${settingsCode}
 
-sMSet.switchSettings.systemData.currentUser = parseInt(sMSet.switchSettings.systemData.currentUserVariable);
-sMSet.switchSettings.systemData.currentUserGroup = parseInt(sMSet.switchSettings.systemData.currentUserGroupVariable); 
+sMSet.systemData.currentUser = parseInt(<!-- |id| -->);
+sMSet.systemData.currentUserGroup = parseInt("<!-- |g_id| -->");
 sMSet.switchSettings.systemData.memberData = eval(<!-- |field_${sMSet.switchSettings.settings.customFieldVariable}| -->);
     
 </script>`;
@@ -120,8 +120,8 @@ const writeCode = () => {
   
 const sMSet = ${settingsCode}
 
-sMSet.switchSettings.systemData.currentUser = parseInt(sMSet.switchSettings.systemData.currentUserVariable);
-sMSet.switchSettings.systemData.currentUserGroup = parseInt(sMSet.switchSettings.systemData.currentUserGroupVariable); 
+sMSet.systemData.currentUser = parseInt(<!-- |id| -->);
+sMSet.systemData.currentUserGroup = parseInt("<!-- |g_id| -->");
 sMSet.switchSettings.systemData.memberData = eval(<!-- |field_${sMSet.switchSettings.settings.customFieldVariable}| -->);
     
 </script>`;
