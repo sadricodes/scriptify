@@ -17,8 +17,6 @@ It allows users to enable and disable additional functions to be applied on the 
 
   - YouTube guide for this step
 
-This is where we wil describe how to install the main script.
-
 1. #### In your Jcink Forum Admin CP, create a new webpage
 
    - Select "Webpage Maker" from the "Skins & Templates" section of your Admin sidebar.
@@ -41,6 +39,14 @@ This is where we wil describe how to install the main script.
      ![The webpage contents box with all of the copied code](./doc_images/codepage.png)
 
    - Save your new webpage by clicking "Create Webpage" at the bottom of the screen.
+
+2. #### Get the page include key, and add it to your board wrappers
+
+   - Find your new webpage in the list of custom webpages
+     ![Your new page information in the list of custom webpages](./doc_images/newwebpagelink.png)
+
+   - Highlight and copy the 'include key' for your new webpage.
+     ![Highlight and copy the whole include key](./doc_images/includekeyhighlight.png)
 
 - ### Create custom webpage for admin settings
 
