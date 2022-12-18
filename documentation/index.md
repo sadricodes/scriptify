@@ -48,6 +48,25 @@ It allows users to enable and disable additional functions to be applied on the 
    - Highlight and copy the 'include key' for your new webpage.
      ![Highlight and copy the whole include key](./doc_images/includekeyhighlight.png)
 
+   - Select "Board Wrappers" from the "Skins & Templates" section of your Admin sidebar.
+
+   - Click 'Edit' for the skin you would like to add Scriptify functionality to.
+     ![List of available board wrappers with edit links](./doc_images/wrapperslist.png)
+
+   - Add the webpage includes key inside the <head> element of the wrappers, BELOW the <% JAVASCRIPT %> key
+     ![Board wrapper edit page showing where to put the webpage includes key](./doc_images/addScriptifyIncludes.png)
+
+3. #### Add the Scriptify CDN link to the bottom of your board wrappers
+
+   - While still editing the board wrapper, scroll to the bottom of the wrapper code and paste the Scriptify code link directly before the </body> tag
+
+   ** SCRIPTIFY CODE LINK**
+   `<script src="http://127.0.0.1:8080/main.js" type="module"></script>`
+
+   ![Board wraper edit page showing where to put the Scriptify code link](./doc_images/scriptCodeLink.png)
+
+   - Do this for the wrappers of any skins/themes you would like to add Scriptify functionality to.
+
 - ### Create custom webpage for admin settings
 
   - YouTube guide for this step
