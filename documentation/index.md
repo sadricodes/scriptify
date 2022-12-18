@@ -24,8 +24,10 @@ This is where we wil describe how to install the main script.
    - Select "Webpage Maker" from the "Skins & Templates" section of your Admin sidebar.
      ![The 'Webpage Maker' link in the administrative sidebar](./doc_images/gettowebpages.png)
    - Select "Create new webpage" from the bar toward the bottom of the page.
+     ![The 'Create new webpage' bar at the bottom of the page](./doc_images/newwebpagelink.png)
 
      _IMPORTANT:_ You will need to have webpages turned _online_ and _enable include keys_.
+     ![The 'Extra Settings' section contains toggles for the online and enable include keys settings](./doc_images/extrasettingsimportant.png)
 
 - ### Create custom webpage for admin settings
 
