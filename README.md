@@ -1,12 +1,12 @@
 # Scriptify Documentation
 
-> **:star: Support Scriptify & Stay Updated! :star:**
->
+**:star: Support Scriptify & Stay Updated! :star:**
+
 > Please support Scriptify by following Sadrienne on [Ko-Fi](https://ko-fi.com/sadricodes), and Watching and Following this GitHub repository.
 >
 > Screenshot and video development updates are also available via [Ko-Fi](https://ko-fi.com/sadricodes)! If you love the project, and have the desire and the means to donate - the Ko-Fi profile has options to donate an amount of your choosing.
 
-## :rainbow: Introduction
+## :rainbow: Welcome to Scriptify!
 
 Scriptify by SadriCodes is a user-friendly JavaScript plugin system for administrators of Jcink forum websites.
 
