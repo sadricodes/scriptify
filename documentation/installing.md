@@ -8,6 +8,10 @@ There are three basic steps you need to take to install Scriptify:
 
 The install guides start with a number of pictures and description for guidance. As some of the processes required to set up Scriptify are repetitive, the processes are described in detail the first time they occur (eg. creating a Jcink webpage). We hope that you find the detailed descriptions useful not just in the first instance, but every time that process (making a Jcink webpage, finding a page link) is required.
 
+The official documentation for the Jcink Webpage maker is available on the Jcink site
+
+- [Webpage Maker documentation (Jcink)](https://jcink.com/main/wiki/jfb-skinning-webpage-maker)
+
 ---
 
 ## Install Scriptify codes to your skin wrappers
