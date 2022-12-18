@@ -96,7 +96,7 @@ There are three basic steps you need to take to install Scriptify:
 
 1. ### Create a new webpage and give it the name "Admin Settings".
 
-- Follow the steps to create another new webpage, and call this one "Admin Settings.
+- Follow the steps to create another new webpage, and call this one "Admin Settings"
   ![Create a new webpage for the admin settings](./doc_images/adminSettingstat.png)
 
 2. ### Paste the admin settings template code into the contents box, and save your webpage
@@ -117,11 +117,35 @@ There are three basic steps you need to take to install Scriptify:
 
   Note that there aren't any permissions checks on the administrative page - but saving new configuration settings _does require_ ACP access.
 
-- ## Create custom webpage for user settings
+- To begin customising the system and enabling modules, see the Admin Guide for more information.
 
-  - YouTube guide for this step
+## Create custom webpage for user settings
 
-  This is where we will describe setting up the user page.
+- YouTube guide for this step
+
+- Note: You may not require a User Settings page if the modules you enable don't require custom user information, or if you disable certain aspects of modules (such as user character settings in Post Wrapper Switch).
+
+  The user configuration system is designed to help non-coding members easily generate the code they need to add to their profiles.
+
+1. ### Create a new webpage, and give it the name "User Settings"
+
+- Follow the steps to create another new webpage, and call this one "User Settings"
+
+2. ### Paste the user settings template code into the contents box, and save your webpage
+
+- View the code for the latest copy of the [User Template](../templates/userConfigTemplate.html) and copy it by clicking the copy icon to the left of the trash can.
+
+- Paste the copied code into the "Contents" section of the webpage you are creating. Save the webpage by clicking "Create Webpage".
+
+  ![The user config webpage ready to be saved](./doc_images/userconfig.png)
+
+3. ### Get the link for the user configuration page, and view it in the browser
+
+- Back on the 'Webpage Maker' page of your Admin CP, you will see the new User Settings page listed.
+
+- Click the name of the page to view it in the browser. If the page appears successfully, give yourself a round of applause! You're awesome!
+
+- To help users begin customising their information for the system, direct them to the Member Guide for more information.
 
 ## Admin Guide
 
