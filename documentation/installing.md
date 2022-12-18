@@ -1,4 +1,4 @@
-# Installating Scriptify
+# Installing Scriptify
 
 ---
 
