@@ -60,7 +60,7 @@ It allows users to enable and disable additional functions to be applied on the 
 
    - While still editing the board wrapper, scroll to the bottom of the wrapper code and paste the Scriptify code link directly before the </body> tag
 
-   ** SCRIPTIFY CODE LINK**
+   **SCRIPTIFY CODE LINK**
    `<script src="http://127.0.0.1:8080/main.js" type="module"></script>`
 
    ![Board wraper edit page showing where to put the Scriptify code link](./doc_images/scriptCodeLink.png)
