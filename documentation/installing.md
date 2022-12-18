@@ -148,7 +148,7 @@ The official documentation for the Jcink Webpage maker is available on the Jcink
 
 ## More Resources:
 
-- [Introduction](./index.md)
+- [Introduction](../README.md)
 - [Admin Guide](./adminguide.md)
 - [Member Guide](./memberguide.md)
 - [Module List](./moduleList.md)

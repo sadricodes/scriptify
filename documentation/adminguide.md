@@ -14,7 +14,7 @@
 
 ## More Resources:
 
-- [Introduction](./index.md)
+- [Introduction](../README.md)
 - [Installation](./installing.md)
 - [Member Guide](./memberguide.md)
 - [Module List](./moduleList.md)

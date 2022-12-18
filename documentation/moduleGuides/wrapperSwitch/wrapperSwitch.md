@@ -9,6 +9,6 @@ This documentation will be specifically for the post wrapper switch module
 
 ## Menu
 
-- [Documentation Index](../../index.md)
+- [Documentation Index](../../../README.md)
 - [Installation](../../installing.md)
 - [Module List](../../moduleList.md)

@@ -8,7 +8,7 @@ A modification that allows members to change how their posst display based on in
 
 ## More Resources
 
-- [Introduction](./index.md)
+- [Introduction](../README.md)
 - [Installing](./installing.md)
 - [Admin Guide](./adminguide.md)
 - [Member Guide](./memberguide.md)
