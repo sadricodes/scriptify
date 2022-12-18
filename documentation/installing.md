@@ -108,7 +108,7 @@ There are three basic steps you need to take to install Scriptify:
 
   Note that there aren't any permissions checks on the administrative page - but saving new configuration settings _does require_ ACP access.
 
-- To begin customising the system and enabling modules, see the Admin Guide for more information.
+- To begin customising the system and enabling modules, see the [Admin Guide](./adminguide.md) for more information.
 
 ---
 
@@ -138,4 +138,13 @@ There are three basic steps you need to take to install Scriptify:
 
 - Click the name of the page to view it in the browser. If the page appears successfully, give yourself a round of applause! You're awesome!
 
-- To help users begin customising their information for the system, direct them to the Member Guide for more information.
+- To help users begin customising their information for the system, direct them to the [Member Guide](./memberguide.md) for more information.
+
+---
+
+## More Resources:
+
+- [Introduction](./index.md)
+- [Admin Guide](./adminguide.md)
+- [Member Guide](./memberguide.md)
+- [Module List](./moduleList.md)
