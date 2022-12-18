@@ -25,33 +25,33 @@ There are three basic steps you need to take to install Scriptify:
 
 1. ### In your Jcink Forum Admin CP, create a new webpage
 
-- Select "Webpage Maker" from the "Skins & Templates" section of your Admin sidebar.
+   1. Select "Webpage Maker" from the "Skins & Templates" section of your Admin sidebar.
 
-  ![The 'Webpage Maker' link in the administrative sidebar](./doc_images/gettowebpages.png)
+   ![The 'Webpage Maker' link in the administrative sidebar](./doc_images/gettowebpages.png)
 
-- Select "Create new webpage" from the bar toward the bottom of the page.
+   2. Select "Create new webpage" from the bar toward the bottom of the page.
 
-  ![The 'Create new webpage' bar at the bottom of the page](./doc_images/newwebpagelink.png)
+   ![The 'Create new webpage' bar at the bottom of the page](./doc_images/newwebpagelink.png)
 
-  _IMPORTANT:_ You will need to have webpages turned _online_ and _enable include keys_.
+   _IMPORTANT:_ You will need to have webpages turned _online_ and _enable include keys_.
 
-  ![The 'Extra Settings' section contains toggles for the online and enable include keys settings](./doc_images/extrasettingsimportant.png)
+   ![The 'Extra Settings' section contains toggles for the online and enable include keys settings](./doc_images/extrasettingsimportant.png)
 
-- Give your new page a Title, and an Include Key. Make sure that "Allow Use" in board wrappers is set to "Yes".
+   3. Give your new page a Title, and an Include Key. Make sure that "Allow Use" in board wrappers is set to "Yes".
 
-  ![Configure your webpage settings here](./doc_images/makeglobalpage.png)
+   ![Configure your webpage settings here](./doc_images/makeglobalpage.png)
 
-- In a different tab, load the latest [Settings Template](../templates/settingsTemplate.html) here on GitHub.
+   4. In a different tab, load the latest [Settings Template](../templates/settingsTemplate.html) here on GitHub.
 
-- Copy the raw contents of that file by clicking the copy icon to the left of the trashcan icon
+   5. Copy the raw contents of that file by clicking the copy icon to the left of the trashcan icon
 
-  ![Copy the entire code to your clipboard using the copy icon](./doc_images/githubcopy.png)
+   ![Copy the entire code to your clipboard using the copy icon](./doc_images/githubcopy.png)
 
-- Paste all of the copied code directly into the 'Contents' box for your new webpage.
+   6. Paste all of the copied code directly into the 'Contents' box for your new webpage.
 
-  ![The webpage contents box with all of the copied code](./doc_images/codepage.png)
+   ![The webpage contents box with all of the copied code](./doc_images/codepage.png)
 
-- Save your new webpage by clicking "Create Webpage" at the bottom of the screen.
+   7. Save your new webpage by clicking "Create Webpage" at the bottom of the screen.
 
 2. ### Get the page include key, and add it to your board wrappers
 
