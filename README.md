@@ -4,7 +4,7 @@
 
 ---
 
-**Support Scriptify & Stay Updated!**
+**:star: Support Scriptify & Stay Updated! :star:**
 
 Please support Scriptify by following Sadrienne on [Ko-Fi](https://ko-fi.com/sadricodes), and Watching and Following this GitHub repository.
 
