@@ -86,7 +86,7 @@ There are three basic steps you need to take to install Scriptify:
 
 - Still on the board wrapper edit page, paste the following link BELOW the <% CSS %> key in the <head> section of the wrapper.
 
-  `<link rel='stylesheet/css' href="https://raw.githubusercontent.com/sadricodes/jcink_wrapperswitch/main/configpages/admin_setup/jcinkSwitch.css">`
+  `<link rel='stylesheet' href="http://127.0.0.1:8080/jcinkSwitch.css">`
 
 5. ### Repeat steps 2-4 for the wrappers of any skins/themes you would like to add Scriptify functionality to.
 
@@ -104,6 +104,18 @@ There are three basic steps you need to take to install Scriptify:
 - View the code for the latest [Admin Template](../templates/adminConfigTemplate.html) and copy it by clicking the copy icon to the left of the trash can
 
 - Paste the copied code into the "Contents" section of the webpage you are creating. Save the webpage by clicking "Create Webpage".
+
+3. ### Get the link for your admin configuration page, and view it in the browser
+
+- Back on the 'Webpage Maker' page of your Admin CP, you will now see the new Admin Settings page listed.
+
+- Click the name of the page to view it in the browser. If the page appears successfully, congratulations! You did it!
+
+  You can use this link to send administrators directly to the configuration page.
+
+  ![Listing for the admin page in the custom Webpage list](./doc_images/adminpagelink.png)
+
+  Note that there aren't any permissions checks on the administrative page - but saving new configuration settings _does require_ ACP access.
 
 - ## Create custom webpage for user settings
 

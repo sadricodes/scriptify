@@ -1,3 +1,15 @@
+.sadriCodesModules {
+  --mainColour: black;
+  --softColour: rgb(184, 181, 181);
+  --textColour: black;
+  --warningColour: #903953;
+  --textContrast: white;
+  --actionColour: #7f4989;
+  --boxItems: #4b7a9a;
+  --boxItemsText: white;
+  --fieldTitleText: rgb(97, 96, 96);
+}
+
 .adminwrapper {
   margin: 0 auto;
   width: 80%;
@@ -14,18 +26,6 @@
 #wrapperSwitchSettings {
   flex-basis: 40%;
   flex-grow: 1;
-}
-
-.sadriCodesModules {
-  --mainColour: black;
-  --softColour: rgb(184, 181, 181);
-  --textColour: black;
-  --warningColour: #903953;
-  --textContrast: white;
-  --actionColour: #7f4989;
-  --boxItems: #4b7a9a;
-  --boxItemsText: white;
-  --fieldTitleText: rgb(97, 96, 96);
 }
 
 .sectionNpcEntry .outputs,
