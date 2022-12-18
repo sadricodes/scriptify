@@ -2,11 +2,11 @@
 
 There are three basic steps you need to take to install Scriptify:
 
-- [Install the Scriptify codes to your wrappers](#install)
-- [Create an admin configuration page](#adminpage)
-- [Create a user configuration page](#userpage) (if required)
+- [Install the Scriptify codes to your wrappers](#install-scriptify-codes-to-your-skin-wrappers)
+- [Create an admin configuration page](#create-custom-webpage-for-admin-settings-adminpage)
+- [Create a user configuration page](#create-custom-webpage-for-user-settings-userpage) (if required)
 
-## Install Scriptify codes to your skin wrappers {#install}
+## Install Scriptify codes to your skin wrappers
 
 - YouTube guide for this step
 
@@ -77,7 +77,7 @@ There are three basic steps you need to take to install Scriptify:
 
 5. ### Repeat steps 2-4 for the wrappers of any skins/themes you would like to add Scriptify functionality to.
 
-## Create custom webpage for admin settings {#adminpage}
+## Create custom webpage for admin settings
 
 - YouTube guide for this step
 
@@ -106,7 +106,7 @@ There are three basic steps you need to take to install Scriptify:
 
 - To begin customising the system and enabling modules, see the Admin Guide for more information.
 
-## Create custom webpage for user settings {#userpage}
+## Create custom webpage for user settings
 
 - YouTube guide for this step
 
