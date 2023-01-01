@@ -271,7 +271,63 @@ Now that we have the post container set up, we can start adding elements that we
 
 ## General Wrapper Switch settings
 
+In the Admin Configuration page, you can define how Wrapper Switch behaves - and who has access to it!
+
+Remember when you change settings here, you need to regenerate your configuration code and save it into the Jcink ACP as detailed in the [Admin Guide](../../adminguide.md).
+
+- ### Wrapper Switch Features
+
+  This section is for simple on/off options and can be found on the 'General Settings' tab of the Post Wrapper Switch section of the left-hand sidebar on your Admin Configuration page. You can tick, or un-tick these options as required. Options include:
+
+  - User Characters Allowed
+    Choose whether members can create and save characters to their user profiles, ready to use in the posting screen
+
+  - NPC Characters Allowed
+    Choose whether NPC characters set up via the Admin Configuration page will be available for use in the posting screen
+
+  - Show Post Screen Inputs
+    Choose whether Wrapper Switch text boxes will display in the posting screen, allowing members to define new characters and change character information per post.
+
+  - Show User Character Dropdown
+    Choose whether the dropdown for a user's characters is visible in the posting screen.
+
+- ### Custom Field Variable
+
+  If you are allowing users to create their own charaacters and save them into their profiles, you will need to create a custom field for them to save their configuration code into.
+
+  Then, enter the custom field number into this setting to ensure Wrapper Switch knows where to look for user character information.
+
 ## Wrapper Switch system permissions
+
+This section determines what members/groups do and do not have access to Wrapper Switch functionality, and can be found on the 'General Settings' tab of the Post Wrapper Switch section of the left-hand sidebar on your Admin Configuration page.
+
+- ### Understanding permissions
+
+  Permissions for the overall system are divided into Group Permissions, and Member Permissions.
+
+  Group Permissions allow you to set a blanket rule for a member group, while Member Permissions allow you to override those rules for particular members. The permissions lists work as follows:
+
+  - Member groups that can use the switch system
+    All members of this group can use the Wrapper Switch system, UNLESS they are excluded in member permissions.
+
+  - Member groups that can NOT use the switch system
+    No members of this group can use the system, UNLESS they are included in member permissions.
+
+  - Members that can use the switch system
+    These members can ALWAYS use the switch system, even if their group is excluded.
+
+  - Members that cannot use the switch system
+    These members can NEVER use the switch system, even if their group is included.
+
+  Member-based permissions will always override group-based permissions.
+
+- ### Changing permission lists
+
+  Enter the group number, or member id number, into the input box of the permission division you would like to modify.
+
+  Click "Add" to include that member or group in the list.
+
+  To remove a member or group from the list, click the number in the box. An alert will appear to confirm that you want to remove that member id or group number from the list.
 
 ## Wrapper Switch Language Settings
 
