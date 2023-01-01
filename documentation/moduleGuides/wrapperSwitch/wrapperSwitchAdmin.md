@@ -20,12 +20,6 @@ In this section
 
 - [Add the data attribute to your whole post container](#add-the-data-attribute-to-your-whole-post-container)
 - [Add the data attribute to your post text container](#add-the-data-attribute-to-your-post-text-container)
-- [Add the switch items to the template](#add-switch-items-to-the-post-template)
-
-  - [Adding the Name switch](#adding-the-name-switch)
-  - [Adding the Avatar switch](#adding-the-avatar-switch)
-  - [Adding a new text switch element](#adding-a-new-text-switch-element)
-  - [Adding a new image switch element](#adding-a-new-image-switch-element)
 
 - ### Add the data attribute to your whole post container
 
@@ -108,6 +102,13 @@ Congratulations! Your post template is now set up and ready to add your switch e
 ## Add switch items to the post template
 
 Now that we have the post container set up, we can start adding elements that we want to be switched using the code. Character names and avatars are two common elements, but this guide will also cover how to add generic text and image elements of your choice.
+
+In this section:
+
+- [Adding the Name switch](#adding-the-name-switch)
+- [Adding the Avatar switch](#adding-the-avatar-switch)
+- [Adding a new text switch element](#adding-a-new-text-switch-element)
+- [Adding a new image switch element](#adding-a-new-image-switch-element)
 
 - ### Adding the name switch
 
@@ -296,6 +297,11 @@ In the Admin Configuration page, you can define how Wrapper Switch behaves - and
 
 Remember when you change settings here, you need to regenerate your configuration code and save it into the Jcink ACP as detailed in the [Admin Guide](../../adminguide.md).
 
+In this section:
+
+- [Wrapper Switch Features](#wrapper-switch-features)
+- [Custom Field Variable](#custom-field-variable)
+
 - ### Wrapper Switch Features
 
   This section is for simple on/off options and can be found on the 'General Settings' tab of the Post Wrapper Switch section of the left-hand sidebar on your Admin Configuration page. You can tick, or un-tick these options as required. Options include:
@@ -325,6 +331,11 @@ Remember when you change settings here, you need to regenerate your configuratio
 ## Wrapper Switch system permissions
 
 This section determines what members/groups do and do not have access to Wrapper Switch functionality, and can be found on the 'General Settings' tab of the Post Wrapper Switch section of the left-hand sidebar on your Admin Configuration page.
+
+In this section:
+
+- [Understanding Permissions](#understanding-permissions)
+- [Changing Permissions Lists](#changing-permission-lists)
 
 - ### Understanding permissions
 
@@ -372,6 +383,12 @@ Simply click inside the input boxes and change the text as you need, remembering
 
 The Input Settings section is where you can manage all of your switchable items, add new items, edit existing ones, get attribute codes, and delete items as required, and can be found on the 'Input Settings' tab of the Post Wrapper Switch section of the left-hand sidebar on your Admin Configuration page.
 
+In this section:
+
+- [Creating a New Input](#creating-a-new-input)
+- [Editing an existing Input](#editing-an-existing-input)
+- [Deleting an input](#deleting-an-input)
+
 ![Input Settings page in Admin Config page]
 
 - ### Creating a new input
@@ -413,6 +430,14 @@ The Input Settings section is where you can manage all of your switchable items,
 ## Wrapper Switch NPC Entries
 
 The NPC Entries section is where you can manage all of your global NPCs, add new ones, edit existing ones, and change who has access to them. This section can be found on the 'NPC Entries' tab of the Post Wrapper Switch section of the left-hand sidebar on your Admin Configuration page.
+
+In this section:
+
+- [Creating a new NPC](#creating-a-new-npc)
+- [Editing an existing NPC](#editing-an-existing-npc)
+- [NPC Permissions](#npc-permissions)
+  - [Changing NPC permissions](#changing-npc-permissions)
+- [Deleting an NPC](#deleting-an-npc)
 
 ![NPC entries tab of the Admin Config page](../../doc_images/npcEntries.png)
 
