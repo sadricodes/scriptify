@@ -1,5 +1,15 @@
 # Admin Guide
 
+Welcome to the Administrator's guide to using the Scriptify system! This document will cover how to generate and save configuration settings for the base system. Guides for each plugin, and what their settings do, can be found in the plugin-specific documentation.
+
+## In this guide
+
+[First Steps](#first-steps)
+[Configuring Modules](#configuring-modules)
+[Generating Settings](#generating-settings)
+[Saving Settings](#saving-settings)
+[Troubleshooting](#troubleshooting)
+
 - ## First Steps
 
   Before you can generate and save settings, you will need to install the Scriptify codes and create an Administrator config page.
@@ -53,7 +63,7 @@
 
   Once you have generated your plugin and system settings, the next step is to save them into your Jcink admin panel.
 
-  - ### Copy your new configuration settinsg
+  - ### Copy your new configuration settings
 
     On the "Generate Code" tab of the admin configuration page, you will see a button on the right called "Copy Code".
 
