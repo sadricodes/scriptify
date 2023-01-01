@@ -90,6 +90,8 @@ Now that we have the post container set up, we can start adding elements that we
 
 - ### Adding the name switch
 
+  To switch the account name, Wrapper Switch changes the innerText property of an element. To make it work, we just need to tell it what HTML element in the template needs to be changed.
+
   - #### Open up the Post Row HTML template for editing
 
     Detailed steps for this can be found above if you need them.
@@ -147,6 +149,52 @@ Now that we have the post container set up, we can start adding elements that we
     - That the name attribute has been inserted into the right place, and doesn't contain typos.
 
 - ### Adding the avatar switch
+
+  To switch out the avatar, Wrapper Switch changes the image source of an element. To make it work, we just need to tell it what HTML element in the template needs to be changed.
+
+  - #### Open up the Mini Profile HTML template for editing
+
+    The user avatar is usually loaded in the "Mini Profile" template. Follow the steps as if you were opening the Post Row template, but click the edit button next to "Mini Profile" instead.
+
+  - #### Find the avatar variable
+
+    This step may vary depending on how the mini profile has been coded. The default Jcink avatar variable looks like this:
+
+    `<!-- |avatar| -->`
+
+    This variable renders the complete HTML element, which wasn't very flexible for coders. To get around that, the avatar_url variable was also introduced and looks like this:
+
+    `<!-- |avatar_url| -->`
+
+    You will find the avatar_url used in two distinct ways:
+
+    - as the `src` in an `<img>` tag: `<img src="<!-- |avatar_url| -->">`
+    - in a style attribute for the avatar container: `<div style="background: url(<!-- |avatar_url| -->)>`
+
+    > > > Currently, Wrapper Switch can only change avatars in `<img>` tags, using the `src` attribute. Support to add CSS items and change background images in inline-CSS is planned, but not yet available.
+
+  - #### If the variable is `<!-- |avatar| -->`
+
+    In this case, we need to replace the variable entirely - that way we can modify the `<img>` tag directly.
+
+    Delete the variable from the template, and in it's place put the following code:
+
+    `<img switch-data-item="avatar">`
+
+    Save the Mini Profile template, that's the avatar switch set up!
+
+  - #### If the variable is `<!-- |avatar_url| -->`
+
+    Here, we just need to add the attribute to the `img` tag. In the `img` tag where the variable is used, add the following attribute to the tag:
+
+    `switch-data-item="avatar"`
+
+    A very basic example would look like this:
+
+    `<img src="<!-- |avatar_url| -->" switch-data-item="avatar">`
+
+    Save the Mini Profile template, you're good to go!
+
 - ### Adding a new text switch element
 - ### Adding a new image switch element
 
