@@ -8,25 +8,29 @@ This guide assumes that you have successfully installed the base codes and creat
 
 - ### Add the data attribute to your whole post container
 
-  In your JCink Admin CP, click "Manage Skin Sets" to view a list of skins available on your forum.
+  - #### Find the Post Row HTML template to edit
 
-  ![List of skins available in Jcink Admin CP](../../doc_images/skinsList.png)
+    In your JCink Admin CP, click "Manage Skin Sets" to view a list of skins available on your forum.
 
-  Click the 'HTML Templates' link for the skin you would like to modify.
+    ![List of skins available in Jcink Admin CP](../../doc_images/skinsList.png)
 
-  This will take you to the list of available HTML templates.
+    Click the 'HTML Templates' link for the skin you would like to modify.
 
-  ![List of HTML templates](../../doc_images/htmlTemps.png)
+    This will take you to the list of available HTML templates.
 
-  In the example, we will be working with the "Jcink Forum Hosting Default".
+    ![List of HTML templates](../../doc_images/htmlTemps.png)
 
-  > > > When first installed, the Jcink Forum Hosting default skin does not have a set of templates assigned. If you would like to begin from this theme, you can create and allocate a set of templates as described in the [Jcink HTML Templates Documentation](https://jcink.com/main/wiki/jfh-html-templates). The code to use and edit for each template can be found on the [Default Templates](https://jcink.com/main/wiki/jfh-skinning-default-templates#category_list_header) page.
+    In the example, we will be working with the "Jcink Forum Hosting Default".
 
-  Find the "Post Row" entry in the list of HTML templates, and click "Edit" to view the code.
+    > > > When first installed, the Jcink Forum Hosting default skin does not have a set of templates assigned. If you would like to begin from this theme, you can create and allocate a set of templates as described in the [Jcink HTML Templates Documentation](https://jcink.com/main/wiki/jfh-html-templates). The code to use and edit for each template can be found on the [Default Templates](https://jcink.com/main/wiki/jfh-skinning-default-templates#category_list_header) page.
 
-  ![Post Row template in edit mode](../../doc_images/postrowEdit1.png)
+    Find the "Post Row" entry in the list of HTML templates, and click "Edit" to view the code.
 
-  > > > If you don't see any code here, it may be because the theme is using default template code. Copy and paste the default template code from the [Default Templates](https://jcink.com/main/wiki/jfh-skinning-default-templates#category_list_header) page
+    ![Post Row template in edit mode](../../doc_images/postrowEdit1.png)
+
+    > > > If you don't see any code here, it may be because the theme is using default template code. Copy and paste the default template code from the [Default Templates](https://jcink.com/main/wiki/jfh-skinning-default-templates#category_list_header) page
+
+  - #### Find the outermost container of your post template
 
 - ### Add the data attribute to your post text container
 
