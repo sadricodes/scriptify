@@ -4,7 +4,27 @@ Welcome to the Wrapper Switch guide for administrators! In this document, we wil
 
 This guide assumes that you have successfully installed the base codes and created configuration pages described in the [Installation](../../installing.md) documentation, and enabled/configured the Wrapper Switch plugin as described in the [Admin Guide](../../adminguide.md).
 
+## In this guide:
+
+- [Configuring Post Templates to use Wrapper Switch](#configuring-post-templates-to-use-wrapper-switch)
+- [Add Switch Items to Post Template](#add-switch-items-to-the-post-template)
+- [General Wrapper Switch Settings](#general-wrapper-switch-settings)
+- [Wrapper Switch System Permissions](#wrapper-switch-system-permissions)
+- [Wrapper Switch Language Settings](#wrapper-switch-language-settings)
+- [Wrapper Switch Input Settings](#wrapper-switch-input-settings)
+- [Wrapper Switch NPC Entries](#wrapper-switch-npc-entries)
+
 ## Configuring Post Templates to use Wrapper Switch
+
+    In this section:
+
+    - [Add the data attribute to your whole post container](#add-the-data-attribute-to-your-whole-post-container)
+    - [Add the data attribute to your post text container](#add-the-data-attribute-to-your-post-text-container)
+    - [Add the switch items to the template](#add-switch-items-to-the-post-template)
+        - [Adding the Name switch](#adding-the-name-switch)
+        - [Adding the Avatar switch](#adding-the-avatar-switch)
+        - [Adding a new text switch element](#adding-a-new-text-switch-element)
+        - [Adding a new image switch element](#adding-a-new-image-switch-element)
 
 - ### Add the data attribute to your whole post container
 
