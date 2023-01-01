@@ -1,3 +1,54 @@
+# Wrapper Switch for Administrators
+
+Welcome to the Wrapper Switch guide for administrators! In this document, we will cover how to set up your post view for Wrapper Switch items, how to add and delete items, how to add and delete NPC characters, and how the permissions systems work.
+
+This guide assumes that you have successfully installed the base codes and created configuration pages described in the [Installation](../../installing.md) documentation, and enabled/configured the Wrapper Switch plugin as described in the [Admin Guide](../../adminguide.md).
+
+## Configuring Post Templates to use Wrapper Switch
+
+- ### Add the data attribute to your whole post container
+
+  In your JCink Admin CP, click "Manage Skin Sets" to view a list of skins available on your forum.
+
+  ![List of skins available in Jcink Admin CP](../../doc_images/skinsList.png)
+
+  Click the 'HTML Templates' link for the skin you would like to modify.
+
+  This will take you to the list of available HTML templates.
+
+  ![List of HTML templates](../../doc_images/htmlTemps.png)
+
+  In the example, we will be working with the "Jcink Forum Hosting Default".
+
+  > > > When first installed, the Jcink Forum Hosting default skin does not have a set of templates assigned. If you would like to begin from this theme, you can create and allocate a set of templates as described in the [Jcink HTML Templates Documentation]("https://jcink.com/main/wiki/jfh-html-templates"). The code to use and edit for each template can be found on the [Default Templates]("https://jcink.com/main/wiki/jfh-skinning-default-templates#category_list_header") page.
+
+- ### Add the data attribute to your post text container
+
+## Add switch items to the post template
+
+- ### Adding the name switch
+- ### Adding the avatar switch
+- ### Adding a new switch element
+
+## General Wrapper Switch settings
+
+## Wrapper Switch system permissions
+
+## Wrapper Switch Language Settings
+
+## Wrapper Switch Input Settings
+
+- ### Creating a new input
+- ### Editing an existing input
+- ### Deleting an input
+
+## Wrapper Switch NPC Settings
+
+- ### Creating a new NPC
+- ### Editing an existing NPC
+- ### NPC permissions
+- ### Deleting an NPC
+
 ## Menu
 
 - [Documentation Index](../../../README.md)
