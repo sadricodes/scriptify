@@ -26,7 +26,26 @@
 
   - YouTube guide for this step
 
-  This is where we will describe how to create a settings code
+  Each plugin will come with its own settings to customise. Please see the relevant admin guide for each plugin to learn about specific plugin settings. You can find direct links to the admin guides of each plugin on the [Module List](./moduleList.md) page.
+
+  - ### Getting your configuration code
+
+    Once you have enabled and configured your plugins, you can generate the settings code.
+
+    To do this, click the "Generate Code" button in the left-hand sidebar.
+    ![The Generate Code tab](./doc_images/generateCode.png)
+
+    To get a copy of your configuration code with all of the changes you have made to it, click "Generate Code". This will fill the textbox below with your updated code.
+
+    ![Generate code tab with generated code](./doc_images/generatedCode.png)
+
+  - ### Retrieving a configuration code & autosaving
+
+    Generating the code does **not** save your changes.
+
+    There is a small auto-save feature that may save the day if your browser crashes unexpectedly, but it is not something to rely on. You can retrieve the last auto-saved version of your configuration code (if one exists) by clicking the "Get Settings From Last Session" button.
+
+    The auto-save feature is triggered every time the tab is changed in the admin configuration page. While this may be useful, it is not reliable. The only reliable method of saving your settings is to follow the saving procedure below.
 
 - ## Saving settings
 
