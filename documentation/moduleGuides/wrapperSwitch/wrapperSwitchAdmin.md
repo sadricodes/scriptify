@@ -26,7 +26,7 @@ This guide assumes that you have successfully installed the base codes and creat
 
   ![Post Row template in edit mode](../../doc_images/postrowEdit1.png)
 
-  > > > If you don't see any code here, it may be because the theme is using default template code. Copy and paste the default template code from the [Default Templates]("https://jcink.com/main/wiki/jfh-skinning-default-templates#category_list_header") page.
+  > > > If you don't see any code here, it may be because the theme is using default template code. Copy and paste the default template code from the [Default Templates](https://jcink.com/main/wiki/jfh-skinning-default-templates#category_list_header) page
 
 - ### Add the data attribute to your post text container
 
