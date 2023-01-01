@@ -291,11 +291,15 @@ Remember when you change settings here, you need to regenerate your configuratio
   - Show User Character Dropdown
     Choose whether the dropdown for a user's characters is visible in the posting screen.
 
+  ![Feature enabling on the General Settings page](../../doc_images/enableFeat.png)
+
 - ### Custom Field Variable
 
   If you are allowing users to create their own charaacters and save them into their profiles, you will need to create a custom field for them to save their configuration code into.
 
   Then, enter the custom field number into this setting to ensure Wrapper Switch knows where to look for user character information.
+
+  ![Custom field variable entry on the General Settings page](../../doc_images/custonVar.png)
 
 ## Wrapper Switch system permissions
 
@@ -308,15 +312,19 @@ This section determines what members/groups do and do not have access to Wrapper
   Group Permissions allow you to set a blanket rule for a member group, while Member Permissions allow you to override those rules for particular members. The permissions lists work as follows:
 
   - Member groups that can use the switch system
+
     All members of this group can use the Wrapper Switch system, UNLESS they are excluded in member permissions.
 
   - Member groups that can NOT use the switch system
+
     No members of this group can use the system, UNLESS they are included in member permissions.
 
   - Members that can use the switch system
+
     These members can ALWAYS use the switch system, even if their group is excluded.
 
   - Members that cannot use the switch system
+
     These members can NEVER use the switch system, even if their group is included.
 
   Member-based permissions will always override group-based permissions.
@@ -329,7 +337,15 @@ This section determines what members/groups do and do not have access to Wrapper
 
   To remove a member or group from the list, click the number in the box. An alert will appear to confirm that you want to remove that member id or group number from the list.
 
+  ![Permission list boxes in the Admin Config page](../../doc_images/sysPermissions.png)
+
 ## Wrapper Switch Language Settings
+
+This section allows you to change the wording of text used by the plugin, and can be found on the 'Language Settings' tab of the Post Wrapper Switch section of the left-hand sidebar on your Admin Configuration page.
+
+Simply click inside the input boxes and change the text as you need, remembering to regenerate your configuration code and save it to your Jcink Admin CP.
+
+![Language Settings page in Admin Config page](../../doc_images/langSettings.png)
 
 ## Wrapper Switch Input Settings
 
