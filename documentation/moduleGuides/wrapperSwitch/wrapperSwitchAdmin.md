@@ -34,17 +34,17 @@ This guide assumes that you have successfully installed the base codes and creat
 
     This is the HTML element that wraps around as much of the code as possible. This will be different from skin to skin, and if your theme has multiple post row display templates that are hidden/shown via CSS, there may be more than one. If you need help finding the element you're looking for, RP communities that have coding help available are the best place to seek help.
 
-    In the case of the default Post Row template, the outermost container is a `<span>` element. It's the element closest to the top that is not closed (there is no nearby `<span>` tag associated with it, the closing tag can be found at the very bottom of the code)
+    In the case of the default Post Row template, the outermost container is a `<span>` element. It's the element closest to the top that is not closed (there is no nearby `</span>` tag associated with it, the closing tag can be found at the very bottom of the code)
 
-- #### Place the attribute in the opening tag of that container
+  - #### Place the attribute in the opening tag of that container
 
-In the opening tag of that outermost container, add the following HTML attribute:
+    In the opening tag of that outermost container, add the following HTML attribute:
 
-`switch-data-item="post"`
+    `switch-data-item="post"`
 
-Sometimes these can be hard to read (especially if they have Jcink variables contained in them, like the example we're using), so it may be easiest to locate the end `>` for that tag and place the attribute code just before that.
+    Sometimes these can be hard to read (especially if they have Jcink variables contained in them, like the example we're using), so it may be easiest to locate the end `>` for that tag and place the attribute code just before that.
 
-![Attribute code added to post container](../../doc_images/addAttributePost.png)
+    ![Attribute code added to post container](../../doc_images/addAttributePost.png)
 
 - ### Add the data attribute to your post text container
 
