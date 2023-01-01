@@ -23,6 +23,10 @@
   flex-basis: 100%;
 }
 
+.makeFull {
+  display: block;
+}
+
 #wrapperSwitchSettings {
   flex-basis: 40%;
   flex-grow: 1;
@@ -199,7 +203,6 @@ textarea {
 #inputEntryBox .inputBox,
 .npcInputBox {
   flex-grow: 1;
-  display: flex;
   flex-wrap: wrap;
   padding: 0 20px;
   gap: 1ch;
@@ -221,7 +224,6 @@ textarea {
   padding: 10px;
   border: 1px solid var(--textColour);
   margin: 0;
-  margin-right: 1ch;
   border: 2px solid var(--actionColour);
 }
 
@@ -237,6 +239,16 @@ textarea {
   flex-basis: 40%;
   flex-grow: 1;
   padding: 0 20px;
+  flex-wrap: wrap;
+  gap: 1ch;
+}
+
+.emptyGrow {
+  flex-basis: 30%;
+  flex-grow: 1;
+  height: 2ch;
+  display: flex;
+  align-items: center;
 }
 
 .buttonrow {
@@ -256,6 +268,10 @@ textarea {
   border-radius: 5px;
   padding: 5px 10px;
   color: var(--boxItemsText);
+}
+
+.copyButton {
+  margin-right: 1ch;
 }
 
 #npcEntries .itemEx,
@@ -360,4 +376,10 @@ textarea {
 .exBoxWrap {
   display: flex;
   gap: 1ch;
+  flex-wrap: wrap;
+}
+
+.itemLine textarea {
+  padding: 10px;
+  margin-top: 1ch;
 }

@@ -35,6 +35,24 @@ const makeGroupBox = (value, source) => {
   return wrapper;
 };
 
+// COPY CODE TO CLIPBOARD
+const copyLine = async (text, container) => {
+  const boxes = document.querySelectorAll(".emptyGrow");
+  for (const box of boxes) {
+    box.classList.remove("warningBox", "warnSuccess");
+    box.innerHTML = "";
+  }
+
+  try {
+    await navigator.clipboard.writeText(text);
+    container.classList.add("warningBox", "warnSuccess");
+    container.innerText = "Successfully copied to clipboard!";
+  } catch (err) {
+    container.classList.add("warningBox");
+    container.innerText = "Could not be copied to clipboard!";
+  }
+};
+
 // MAKE EXCLUSION BOXES FOR NPC PERMISSIONS
 const makeExclusionBoxes = (property, titleYes, titleNo, npc) => {
   const exWrapper = document.createElement("div");
@@ -326,6 +344,7 @@ const toggleElement = () => {
   const allDivs = document.querySelectorAll("#inputEntryBox .inputBox");
 
   for (const div of allDivs) {
+    console.log(div);
     if (div.getAttribute("id") === targetDiv) {
       event.target.innerText === "Hide"
         ? ((event.target.innerText = "Show"),
@@ -421,7 +440,17 @@ const makeInputDataBoxes = (entry) => {
   const bottomLine = document.createElement("div");
   bottomLine.classList.add("outputs");
   const switchCode = document.createElement("pre");
-  switchCode.innerText = `switch-data-item="${inputData[entry].id}"`;
+  switchCode.innerText = `switch-data-item="${inputData[entry].code}"`;
+
+  const successNote = document.createElement("span");
+  successNote.classList.add("emptyGrow");
+
+  const copyButton = document.createElement("button");
+  copyButton.innerText = "Copy Code";
+  copyButton.classList.add("actionButton");
+  copyButton.addEventListener("click", () =>
+    copyLine(`switch-data-item="${inputData[entry].code}"`, successNote)
+  );
 
   const deleteButton = document.createElement("button");
   deleteButton.classList.add("warningButton");
@@ -432,6 +461,8 @@ const makeInputDataBoxes = (entry) => {
   deleteButton.innerText = `Delete ${inputData[entry].name}`;
 
   bottomLine.appendChild(switchCode);
+  bottomLine.appendChild(copyButton);
+  bottomLine.appendChild(successNote);
   bottomLine.appendChild(deleteButton);
 
   inputWrapper.appendChild(nameBox);

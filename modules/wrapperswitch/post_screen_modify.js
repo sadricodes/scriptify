@@ -64,16 +64,26 @@ const makeInputBox = (input) => {
 // PROGRAMATICALLY CREATE INPUTS
 const placeInPostBox = () => {
   // CREATE CONTAINING DIV
+  const headTr = document.createElement("tr");
+  const setTr = document.createElement("tr");
+  //setTr.style.cssText = "display: block;";
+  const butTr = document.createElement("tr");
   const outerWrapper = document.createElement("tr");
+
   const inputWrapper = document.createElement("td");
-  inputWrapper.style.cssText = "display: flex; flex-wrap: wrap;";
+  //inputWrapper.classList.add("makeFull");
+  const inputWrapDiv = document.createElement("div");
+  inputWrapDiv.style.cssText = "display: flex; flex-wrap: wrap; flex-grow: 1;";
   inputWrapper.setAttribute("colspan", "2");
+  inputWrapper.appendChild(inputWrapDiv);
+  setTr.appendChild(inputWrapper);
 
   // CREATE THE HEADER
   const inputHeader = document.createElement("td");
   inputHeader.classList.add("pformstrip");
   inputHeader.setAttribute("colspan", "2");
   inputHeader.innerText = sMSet.switchSettings.languageStrings.sectionTitle;
+  headTr.appendChild(inputHeader);
 
   // CHECK NPC PERMISSIONS
   const checkNpcPerm = (npc) => {
@@ -204,9 +214,10 @@ const placeInPostBox = () => {
 
   const clearButtonWrap = document.createElement("td");
   clearButtonWrap.classList.add("pformright");
-  clearButtonWrap.style.cssText =
-    "display: flex; flex-wrap: wrap; align-items: center; justify-content: center; padding: 10px;";
   clearButtonWrap.setAttribute("colspan", "2");
+  const clearButDiv = document.createElement("div");
+  clearButDiv.style.cssText =
+    "display: flex; flex-wrap: wrap; align-items: center; justify-content: center; padding: 10px;";
   const clearButton = document.createElement("button");
   clearButton.innerText =
     sMSet.switchSettings.languageStrings.clearSelectButton;
@@ -215,27 +226,33 @@ const placeInPostBox = () => {
     e.preventDefault();
     clearAll();
   });
-  clearButtonWrap.appendChild(clearButton);
+  clearButDiv.appendChild(clearButton);
+  clearButtonWrap.appendChild(clearButDiv);
+  butTr.appendChild(clearButtonWrap);
 
   // APPEND INNER ELEMENTS TO OUTER
-  outerWrapper.appendChild(inputHeader);
-  outerWrapper.appendChild(inputWrapper);
-  outerWrapper.appendChild(clearButtonWrap);
+  outerWrapper.appendChild(headTr);
+  outerWrapper.appendChild(setTr);
+  outerWrapper.appendChild(butTr);
 
-  return outerWrapper;
+  return outerWrapper.childNodes;
 };
 
 const setElementsForPostScreen = () => {
+  console.log("placing");
+
   // FIND THE SUBMIT BUTTON AND SEE WHAT HAPPENS
-  const submitButton = document.querySelector('[name="submit"]');
+  const submitButton = document.querySelector(
+    '[name="submit"][value="Add Reply"]'
+  );
 
   // GET THE ELEMENTS WE NEED
   const postBox = document.getElementsByTagName("textarea")[0];
   const postText = postBox.value;
 
   const setInfoElement = placeInPostBox();
-  const destinationDiv = document.getElementById("enter-your-post");
-  destinationDiv.after(setInfoElement);
+  let destinationDiv = document.getElementById("enter-your-post");
+  destinationDiv.after(setInfoElement[0], setInfoElement[1], setInfoElement[2]);
 
   const inputs = document.querySelectorAll(".manualInput");
 
@@ -244,7 +261,7 @@ const setElementsForPostScreen = () => {
     setInfo(postBox, inputs);
   });
 
-  if (inputCode === "08") {
+  if (sMSet.systemData.inputCode === "08") {
     bindBackForEdit(postText, postBox);
   }
 };
