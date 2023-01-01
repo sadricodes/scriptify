@@ -20,7 +20,7 @@ This guide assumes that you have successfully installed the base codes and creat
 
   In the example, we will be working with the "Jcink Forum Hosting Default".
 
-  > > > When first installed, the Jcink Forum Hosting default skin does not have a set of templates assigned. If you would like to begin from this theme, you can create and allocate a set of templates as described in the [Jcink HTML Templates Documentation]("https://jcink.com/main/wiki/jfh-html-templates"). The code to use and edit for each template can be found on the [Default Templates]("https://jcink.com/main/wiki/jfh-skinning-default-templates#category_list_header") page.
+  > > > When first installed, the Jcink Forum Hosting default skin does not have a set of templates assigned. If you would like to begin from this theme, you can create and allocate a set of templates as described in the [Jcink HTML Templates Documentation](https://jcink.com/main/wiki/jfh-html-templates). The code to use and edit for each template can be found on the [Default Templates](https://jcink.com/main/wiki/jfh-skinning-default-templates#category_list_header) page.
 
   Find the "Post Row" entry in the list of HTML templates, and click "Edit" to view the code.
 
