@@ -86,7 +86,66 @@ Congratulations! Your post template is now set up and ready to add your switch e
 
 ## Add switch items to the post template
 
+Now that we have the post container set up, we can start adding elements that we want to be switched using the code. Character names and avatars are two common elements, but this guide will also cover how to add generic text and image elements of your choice.
+
 - ### Adding the name switch
+
+  - #### Open up the Post Row HTML template for editing
+
+    Detailed steps for this can be found above if you need them.
+
+    The Post Row template usually contains the name of the account that is posting, so we need to tell the Wrapper Switch code where to find what it needs to switch out.
+
+  - #### Locate the account name variable in the template
+
+    The Jcink Post Row variable for the account name is `<!-- |name| -->`, and it's usually surrounded by a few other variables like the prefix and suffix, as well as the name_css.
+
+    In the default template, it looks like this:
+
+    ![Post Row Template code with name variable highlighted](../../doc_images/nameCodeLine.png)
+
+    It looks a bit confusing, so let's add some line breaks and indents to make it easier to read:
+
+    ![Post Row template with name code formatted](../../doc_images/nameLineFormatted.png)
+
+    This is the same code as before -- just with a bit of formatting. If you're using a custom theme with a custom post row template, the code will be very different to this, but it will always contain that name variable.
+
+  - #### Get the name attribute code from your Admin Configuration Page
+
+    In another tab, load your Admin Configuration page. If you have the Wrapper Switch module enabled (see the [Admin Guide](../../adminguide.md) page for help enabling/disabling plugins), you will see settings tabs for the Wrapper Switch plugin in the left-hand sidebar.
+
+    Select the "Input Settings" tab
+
+    ![Admin Configuration page viewing the Input Settings tab](../../doc_images/inputSettings.png)
+
+    Here you can see a list of all the available inputs you have configured.
+
+    Underneath the 'Character Name' heading, you can see a code box. Click the 'Copy Code' button to the right of this box to easily copy the code to your clipboard, or highlight and copy with your normal preferred method if your browser doesn't allow script copying.
+
+    If a message confirming that the code was successfully copied to your clipboard appears, you're good to go!
+
+  - #### Add the attribute code to the element that contains the name variable
+
+    Go back to where you were editing the Post Row template in your Admin CP.
+
+    Find the element that wraps around the name variable. In the default theme, it's a span element.
+
+    Add the attribute code we copied above to the end of that element's opening tag.
+
+    ![Post Row template html with name added to containing element](../../doc_images/nameAttAdd.png)
+
+  - #### Save the Post Row template - that's done!
+
+    Save the template, and have a stretch. Well done!
+
+    You can test whether the switch is working by making a post and filling out the 'name' field in the post screen. When you view the post, it should change to the name you selected in the post screen.
+
+    If not, check:
+
+    - That the Wrapper Switch system is enabled
+    - That the correct attributes have been added to the post row container, and the post text container (see above for instructions) - remember to check for typos!
+    - That the name attribute has been inserted into the right place, and doesn't contain typos.
+
 - ### Adding the avatar switch
 - ### Adding a new text switch element
 - ### Adding a new image switch element
