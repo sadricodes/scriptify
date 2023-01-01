@@ -46,7 +46,41 @@ This guide assumes that you have successfully installed the base codes and creat
 
     ![Attribute code added to post container](../../doc_images/addAttributePost.png)
 
+  - #### Save the HTML template
+
+    Click the 'Save Changes' button to save your changes. A message will appear above the button with the time the template was successfully saved.
+
 - ### Add the data attribute to your post text container
+
+  - #### Open the "Post Row" HTML template to edit
+
+    As described in the first step, locate and open the "Post Row" template for the skin you would like to modify.
+
+  - #### Find the container that wraps around the post text
+
+    This can be tricky to identify, especially in custom skins.
+
+    Look for the `<!-- |post| -->` Jcink variable located in the template. This is where the post text will be loaded.
+
+    Now, have a look at the HTML element that comes directly before it. If that element opens before that variable, and closes after it - that's likely the one you're looking for! Again, Jcink RP community coders can be a great help in finding the correct post container element.
+
+    In the default template, the post container element looks like this:
+
+    ![Post Row code with container element highlighted](../../doc_images/postContainerDiv.png)
+
+  - #### Add the Post Text attribute to this container
+
+    Similar to how you did with the outermost container, place this attribute into the post container element's opening tag:
+
+    `switch-data-item="postText"`
+
+    The updated code for the default example looks like this:
+
+    ![Post Row template with attribute added to post text container](../../doc_images/postTextAttAdd.png)
+
+  - #### Save the HTML template
+
+    Click the 'Save Changes' button to save your changes. A message will appear above the button with the time the template was successfully saved.
 
 ## Add switch items to the post template
 
