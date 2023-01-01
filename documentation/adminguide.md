@@ -4,11 +4,11 @@ Welcome to the Administrator's guide to using the Scriptify system! This documen
 
 ## In this guide
 
-[First Steps](#first-steps)
-[Configuring Modules](#configuring-modules)
-[Generating Settings](#generating-settings)
-[Saving Settings](#saving-settings)
-[Troubleshooting](#troubleshooting)
+- [First Steps](#first-steps)
+- [Configuring Modules](#configuring-modules)
+- [Generating Settings](#generating-settings)
+- [Saving Settings](#saving-settings)
+- [Troubleshooting](#troubleshooting)
 
 - ## First Steps
 
