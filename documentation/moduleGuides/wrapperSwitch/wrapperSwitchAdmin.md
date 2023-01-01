@@ -82,11 +82,14 @@ This guide assumes that you have successfully installed the base codes and creat
 
     Click the 'Save Changes' button to save your changes. A message will appear above the button with the time the template was successfully saved.
 
+Congratulations! Your post template is now set up and ready to add your switch elements!
+
 ## Add switch items to the post template
 
 - ### Adding the name switch
 - ### Adding the avatar switch
-- ### Adding a new switch element
+- ### Adding a new text switch element
+- ### Adding a new image switch element
 
 ## General Wrapper Switch settings
 
