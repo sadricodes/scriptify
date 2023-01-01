@@ -196,7 +196,78 @@ Now that we have the post container set up, we can start adding elements that we
     Save the Mini Profile template, you're good to go!
 
 - ### Adding a new text switch element
+
+  So far, we've set up switch elements for items that already exist. But what about those that don't? Text switch elements give you the ability to change the inner text of an item to a custom value.
+
+  You might use this for changing custom field values or statuses that can change per post.
+
+  - #### Load the Post Row or Mini Profile HTML template for editing
+
+    The template you need will depend on where you want the information to display. If you need help finding the right template, the RP coding community will be able to help.
+
+  - #### Find the attribute code for the item you want to add
+
+    Go to the 'Input Settings' tab on your Admin Configuration page, and find the input that you would like to add to the template. Click 'Copy Code' or highlight and copy the code text as normal.
+
+  - #### Add an element to contain the text
+
+    In the template, add a HTML element where you want the text to display.
+
+    This can be any HTML element that can display text - `span` and `div` will be the most common. A basic example would look like this:
+
+    `<span></span>`
+
+    It looks a bit strange with nothing inside it - Wrapper Switch will use JavaScript to insert text into that element when it's required.
+
+  - #### Add the attribute code to your new element
+
+    Just as we did with other examples, add the attribute code to the opening tag of the element. It should look a bit like this:
+
+    `<span switch-data-item="an_item"></span>`
+
+    You can style this element however you like, add CSS classes and make it pretty. All that matters is that the attribute remains in that opening tag.
+
+  - #### Save and close the template
+    Save the changes to the template, and give it a test!
+
 - ### Adding a new image switch element
+
+  Image elements allow you to add additional images to your post view that change according to character information set up in Wrapper Switch. To make sure you don't end up with broken image links, it's recommended to set up a fallback image that will display if nothing else is set.
+
+  - #### Load the Post Row or Mini Profile HTML template for editing
+
+    The template you need will depend on where you want the information to display. If you need help finding the right template, the RP coding community will be able to help.
+
+  - #### Find the attribute code for the item you want to add
+
+    Go to the 'Input Settings' tab on your Admin Configuration page, and find the input that you would like to add to the template. Click 'Copy Code' or highlight and copy the code text as normal.
+
+  - #### Add an element to contain the text
+
+    In the template, add an `img` element where you want the text to display.
+
+    A basic example would look like this:
+
+    `<img src="url_to_fallback_image">`
+
+    The fallback image URL is important.
+
+    It may be a "default" image you want to display if a link is not supplied by the user, or it could be a small transparent png to give the illusion of nothing displaying at all. If there is no fallback image and your user does not supply an image URL, your posts will show broken image icons instead. Look how sad they are:
+
+    ![Broken image icon](../../doc_images/broken_img.png)
+
+    Avoid sadness, and provide a fallback image URL.
+
+  - #### Add the attribute code to your new img element
+
+    Just as we did with other examples, add the attribute code to the opening tag of the element. It should look a bit like this:
+
+    `<img src="url_to_fallback_image" switch-data-item="an_item">`
+
+    You can style this image container however you like, add CSS classes and make it pretty. All that matters is that the attribute remains in that tag.
+
+  - #### Save and close the template
+    Save the changes to the template, and give it a test!
 
 ## General Wrapper Switch settings
 
