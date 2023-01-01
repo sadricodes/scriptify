@@ -25,9 +25,11 @@ When you first load your Admin config page, you will be taken to the "Enable/Dis
 Each plugin will be listed with the enable/disable button to the right. Click the button to enable or disable the plugin as you require.
 
 Plugins that are in a disabled state will have a button to "Enable"
+
 ![The plugin list with Wrapper Switch disabled](./doc_images/pluginDisabled.png)
 
 Plugins that are in an enabled state will have a button to "Disable"
+
 ![The plugin list with Wrapper Switch enabled](./doc_images/pluginDisable.png)
 
 When a plugin is Enabled, it's related settings will also be available in the left-hand sidebar.
@@ -43,6 +45,7 @@ Each plugin will come with its own settings to customise. Please see the relevan
   Once you have enabled and configured your plugins, you can generate the settings code.
 
   To do this, click the "Generate Code" button in the left-hand sidebar.
+
   ![The Generate Code tab](./doc_images/generateCode.png)
 
   To get a copy of your configuration code with all of the changes you have made to it, click "Generate Code". This will fill the textbox below with your updated code.
