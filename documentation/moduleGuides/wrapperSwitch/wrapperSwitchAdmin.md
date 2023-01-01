@@ -389,7 +389,7 @@ In this section:
 - [Editing an existing Input](#editing-an-existing-input)
 - [Deleting an input](#deleting-an-input)
 
-![Input Settings page in Admin Config page]
+![Input Settings page in Admin Config page](../../doc_images/inputSettingsPage.png)
 
 - ### Creating a new input
 
