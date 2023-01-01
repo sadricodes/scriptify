@@ -51,7 +51,34 @@
 
   - YouTube guide for this step
 
-  This is where we will describe saving the settings in the ACP
+  Once you have generated your plugin and system settings, the next step is to save them into your Jcink admin panel.
+
+  - ### Copy your new configuration settinsg
+
+    On the "Generate Code" tab of the admin configuration page, you will see a button on the right called "Copy Code".
+
+    Click this to copy the contents of the text box into your computer's clipboard. A message will appear to let you know that the text has copied successfully. If your computer doesn't allow this function, you can copy it by highlighting all the text and pressing CTRL/CMD-C as normal.
+
+  - ### Find your Scriptify settings webpage, and edit it
+
+    In your JCink admin panel, navigate to the Webpage Maker and find the settings page you created as part of the [Installation](./installing.md) process. Click the 'edit' button on the right of screen to open the page editor.
+
+  - ### Replace the old settings code with your new code
+
+    Clear all of the code out of the webpage edit box.
+
+    Paste in the new code that has been copied to your clipboard.
+
+  - ### Save the webpage
+
+    Click 'Edit Webpage' at the bottom of the screen.
+
+    A message will appear above the 'Edit Webpage' button to let you know that the page has been saved successfully.
+
+    Remember: Your new configuration settings will only work once this webpage has been successfully updated.
+
+- ## Troubleshooting
+  If you have followed all of these steps, but your code doesn't appear to be updating - or the system is not functioning at all, log an issue in this GitHub, or seek advice via Discord.
 
 ## More Resources:
 
