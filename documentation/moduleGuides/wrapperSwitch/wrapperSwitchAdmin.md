@@ -16,15 +16,16 @@ This guide assumes that you have successfully installed the base codes and creat
 
 ## Configuring Post Templates to use Wrapper Switch
 
-    In this section:
+In this section
 
-    - [Add the data attribute to your whole post container](#add-the-data-attribute-to-your-whole-post-container)
-    - [Add the data attribute to your post text container](#add-the-data-attribute-to-your-post-text-container)
-    - [Add the switch items to the template](#add-switch-items-to-the-post-template)
-        - [Adding the Name switch](#adding-the-name-switch)
-        - [Adding the Avatar switch](#adding-the-avatar-switch)
-        - [Adding a new text switch element](#adding-a-new-text-switch-element)
-        - [Adding a new image switch element](#adding-a-new-image-switch-element)
+- [Add the data attribute to your whole post container](#add-the-data-attribute-to-your-whole-post-container)
+- [Add the data attribute to your post text container](#add-the-data-attribute-to-your-post-text-container)
+- [Add the switch items to the template](#add-switch-items-to-the-post-template)
+
+  - [Adding the Name switch](#adding-the-name-switch)
+  - [Adding the Avatar switch](#adding-the-avatar-switch)
+  - [Adding a new text switch element](#adding-a-new-text-switch-element)
+  - [Adding a new image switch element](#adding-a-new-image-switch-element)
 
 - ### Add the data attribute to your whole post container
 
