@@ -349,16 +349,112 @@ Simply click inside the input boxes and change the text as you need, remembering
 
 ## Wrapper Switch Input Settings
 
+The Input Settings section is where you can manage all of your switchable items, add new items, edit existing ones, get attribute codes, and delete items as required, and can be found on the 'Input Settings' tab of the Post Wrapper Switch section of the left-hand sidebar on your Admin Configuration page.
+
+![Input Settings page in Admin Config page]
+
 - ### Creating a new input
+
+  To create a new input, click the 'Add New Input' button at the bottom of the page. An entry called 'New Field' will appear at the bottom of the list.
+
+  ![New input added in Input Settings](../../doc_images/newInput.png)
+
+  Click the 'show' button for "New Field" to view the field options.
+
+  ![New input entry fields](../../doc_images/newFieldEntry.png)
+
+  Fill out the details of the new input:
+
+  - Field Name is the name of the new input
+  - Field ID is a unique ID for the input (no spaces)
+  - Field Code is a reference code for the input (no spaces)
+  - Field Order determines where this field will display on the posting screen, and also on your input settings list
+  - Field Required determines whether members MUST enter a value in this field when using the Post Switch
+
+  Regenerate your configuration code and save it to your Jcink Admin CP to save the new input.
+
 - ### Editing an existing input
+
+  To edit an input that already exists, click the 'show' button for the field you would like to modify.
+
+  Change input information as you need, remembering ID and Code cannot have spaces.
+
+  Regenerate your configuration code and save it to your Jcink Admin CP to save the changes to this input.
+
 - ### Deleting an input
 
-## Wrapper Switch NPC Settings
+  To delete an input, click the "Delete" button below the input item listing.
+
+  An alert box will confirm whether you would like to delete that item. Click 'OK' to continue, or 'Cancel' to cancel the action.
+
+  Regenerate your configuration code and save it to your Jcink Admin CP to permanently remove the input.
+
+## Wrapper Switch NPC Entries
+
+The NPC Entries section is where you can manage all of your global NPCs, add new ones, edit existing ones, and change who has access to them. This section can be found on the 'NPC Entries' tab of the Post Wrapper Switch section of the left-hand sidebar on your Admin Configuration page.
+
+![NPC entries tab of the Admin Config page](../../doc_images/npcEntries.png)
 
 - ### Creating a new NPC
+
+  To create a new NPC, click the 'Add New NPC' button at the bottom of the page. This will create an entry called 'New Character' at the bottom of the list.
+
+  ![New character added to the NPC Entries list](../../doc_images/newCharEntry.png)
+
+  Click the 'Edit' button to the right of the name to view NPC information.
+
+  ![Editing a new NPC](../../doc_images/npcEditScreen.png)
+
+  The fields you see here will depend on what inputs you have set up, but some are required for all characters:
+
+  - Character Name
+  - Shortcode (one is auto-generated, but you can change this to something else unique)
+  - Order (what order this NPC should display in drop-down lists and the NPC entry list)
+  - Description (a small description of the NPC, shown on the NPC entry list)
+
+  When you've finished filling out the character information, regenerate your configuration code and save it to your Jcink Admin CP to save the NPC.
+
 - ### Editing an existing NPC
+
+  Click the 'Edit' button to the right of the name of the NPC you would like to edit to view NPC information.
+
+  Change information as required, remembering that shortcodes must be unique.
+
+  When you've finished modifying character information, regenerate your configuration code and save it to your Jcink Admin CP to save the NPC.
+
 - ### NPC permissions
+
+  Each NPC has their own permissions, allowing you to determine which members are allowed to post with each global NPC.
+
+  Permission type for NPCs can either be set to "Include All Members" or "Exclude All Members". When the permission type is selected, the title of the permission list boxes changes.
+
+  - Include All Members means that any group or member numbers in the "Groups CAN Use" or "Members CAN Use" lists have the ability to post with this character, UNLESS their member number is shown in the 'Member CAN NEVER use" list.
+
+  Permissions set with 'Include All Members' may look like this:
+
+  ![Inclusive permissions matrix for NPC](../../doc_images/includePerms.png)
+
+  - Exclude All Members means that that any group or member numbers in the "Groups CAN NOT Use" or "Members CAN NOT Use" lists do NOT have the ability to post with this character, UNLESS their member number is shown in the 'Member CAN ALWAYS use" list.
+
+  Permissions set with 'Exclude All Members may look like this:
+
+  ![Exclusive permissions matrix for NPC](../../doc_images/excludePerms.png)
+
+  #### Changing NPC permissions
+
+  To add a member group number, or member id number to a permissions list, enter the number into the text box and click 'Add'.
+
+  To remove a member group numer, or member id number from a permissions list, click the desired number in the box. An alert will confirm whether to continue with removing the item.
+
+  When you've finished modifying NPC permissions, regenerate your configuration code and save it to your Jcink Admin CP to save the NPC.
+
 - ### Deleting an NPC
+
+  To delete an NPC, simply click the "Delete (character name)" button at the bottom-right of the NPC's listing.
+
+  An alert will confirm whether to continue with removing the NPC from the list.
+
+  Regenerate your configuration code and save it to your Jcink Admin CP to save the updated NPC list.
 
 ## Menu
 
